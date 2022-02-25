@@ -4,7 +4,7 @@ function [Eh, En_mean] = HENR(x, fs)
     wlen = fix(0.02 * fs);
     inc = fix(0.5 * wlen);
     wnd = hanning(wlen);
-    y = v_enframe(x, wnd, inc)';
+    y = enframe(x, wnd, inc)';
     fn = size(y, 2);
     En = zeros(1, fn);
 

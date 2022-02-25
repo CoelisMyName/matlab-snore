@@ -4,7 +4,7 @@ function [LPC, LPC_mean, LPC_max, LPC_min, LPC_var] = LPCFeature(x, Fs)
     wlen = fix(0.02 * Fs);
     inc = fix(0.5 * wlen);
     wind = hamming(wlen);
-    y = v_enframe(x, wind, inc)'; %分帧
+    y = enframe(x, wind, inc)'; %分帧
     fn = size(y, 2); %总帧数
     LPC = zeros(13, fn);
 

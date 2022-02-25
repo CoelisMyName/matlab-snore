@@ -44,7 +44,7 @@ function [predict_label] = classifier(x, w_starts, w_ends, fs)
             case 48000
                 f0 = pitch(sig1, 48000, 'WindowLength', 2400, 'OverlapLength', 1200);
         end
-        
+
         period_mean(i) = mean(f0); %计算基音周期的平均值
         period_min(i) = min(f0); %计算基音周期的最小值
         period_max(i) = max(f0); %计算基音周期的最大值

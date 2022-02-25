@@ -3,11 +3,13 @@ function [w_starts, w_ends] = vad(x, fs)
 
     %% -------------------音频最小长度60秒---------------------------
     MIN_LEN = 60 * fs;
-    if(length(x) > MIN_LEN)
+
+    if (length(x) > MIN_LEN)
         x = x(1:MIN_LEN);
     end
-    if(length(x) < MIN_LEN)
-       x = [x zeros(1,MIN_LEN - length(x))]; 
+
+    if (length(x) < MIN_LEN)
+        x = [x zeros(1, MIN_LEN - length(x))];
     end
 
     maxs = amax_group(x, 50);
@@ -37,6 +39,7 @@ function [w_starts, w_ends] = vad(x, fs)
         w_starts = (nx3 - 1) * 2500 + 1;
         w_ends = nx4 * 2500;
     end
+
     %截取段过滤
     [w_starts, w_ends] = vad_length_filter(w_starts, w_ends, 0.03 * fs, 5 * fs);
 

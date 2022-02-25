@@ -3,7 +3,7 @@ function [CF_mean] = CrestFactor(x, fs)
     wlen = fix(0.02 * fs);
     wnd = hamming(wlen);
     inc = fix(0.5 * wlen);
-    y = v_enframe(x, wnd, inc)';
+    y = enframe(x, wnd, inc)';
     fn = size(y, 2);
     Crest_Factor = zeros(1, fn);
 

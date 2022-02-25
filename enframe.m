@@ -1,19 +1,28 @@
-function varargout = enframe(varargin)
-    %
-    % For calling details please see v_enframe.m
-    %
-    % This dummy routine is included for backward compatibility only
-    % and will be removed in a future release of voicebox. Please use
-    % v_enframe.m in future and/or update with v_voicebox_update.m
-    %
-    %      Copyright (C) Mike Brookes 2018
-    %      Version: $Id: enframe.m 10863 2018-09-21 15:39:23Z dmb $
-    %
-    if nargout
-        varargout = cell(1, nargout);
-        [varargout{:}] = v_enframe(varargin{:});
+function f = enframe(x, win, inc)
+    %ENFRAME split signal up into (overlapping) frames: one per row. F=(X,WIN,INC)
+
+    nx = length(x);
+    nwin = length(win);
+
+    if (nwin == 1)
+        len = win;
     else
-        v_enframe(varargin{:});
+        len = nwin;
+    end
+
+    if (nargin < 3)
+        inc = len;
+    end
+
+    nf = fix((nx - len + inc) / inc);
+    f = zeros(nf, len);
+    indf = inc * (0:(nf - 1)).';
+    inds = (1:len);
+    f(:) = x(indf(:, ones(1, len)) + inds(ones(nf, 1), :));
+
+    if (nwin > 1)
+        w = win(:)';
+        f = f .* w(ones(nf, 1), :);
     end
 
 end

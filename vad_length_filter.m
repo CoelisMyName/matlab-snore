@@ -8,7 +8,7 @@ function [fstarts, fends] = vad_length_filter(starts, ends, min_len, max_len)
 
     for i = 1:min(length(starts), length(ends))
         len = ends(i) - starts(i) + 1;
-% 小于限定长度或大于限定长度的都抛弃
+        % 小于限定长度或大于限定长度的都抛弃
         if len > min_len && len < max_len
             k = k + 1;
             fstarts(k) = starts(i);
@@ -16,7 +16,8 @@ function [fstarts, fends] = vad_length_filter(starts, ends, min_len, max_len)
         end
 
     end
-% 对结果进行裁剪
+
+    % 对结果进行裁剪
     fstarts = fstarts(1:k);
     fends = fends(1:k);
 end
