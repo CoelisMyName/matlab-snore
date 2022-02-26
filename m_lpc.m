@@ -3,7 +3,7 @@ function [a, e] = m_lpc(x, N)
 
     if (n > 1) && (m == 1)
         x = x(:);
-        [m, n] = size(x);
+        [m, ~] = size(x);
     end
 
     X = fft(x, 2^nextpow2(2 * size(x, 1) - 1));

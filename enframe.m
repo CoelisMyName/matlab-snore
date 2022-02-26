@@ -5,7 +5,7 @@ function f = enframe(x, win, inc)
     nwin = length(win);
 
     if (nwin == 1)
-        len = win;
+        len = win(1);
     else
         len = nwin;
     end
@@ -24,5 +24,4 @@ function f = enframe(x, win, inc)
         w = win(:)';
         f = f .* w(ones(nf, 1), :);
     end
-
 end
