@@ -1,7 +1,7 @@
 %% 获取高于阈值的段 x数组，dth阈值，width宽度
-function [starts, ends] = vad_below_threshold(xn, dth, width)
-    starts = zeros(1, ceil(length(xn) / width));
-    ends = zeros(1, ceil(length(xn) / width));
+function [ostarts, oends] = vad_below_threshold(xn, dth, width)
+    starts = zeros(1, ceil(length(xn) / width) + 1, 'int64');
+    ends = zeros(1, ceil(length(xn) / width) + 1, 'int64');
     len = 0;
     count = 0;
     coder.varsize('starts');
@@ -32,6 +32,6 @@ function [starts, ends] = vad_below_threshold(xn, dth, width)
         ends(len) = length(xn);
     end
 
-    starts = starts(1:len);
-    ends = ends(1:len);
+    ostarts = starts(1:len)';
+    oends = ends(1:len)';
 end

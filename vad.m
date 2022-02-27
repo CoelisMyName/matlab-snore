@@ -1,4 +1,5 @@
 %% 只接受1分钟长度的音频，多的截去，少的补0
+% x(inf,1) fs(1,1) w_starts(inf,1) w_ends(inf,1)
 function [w_starts, w_ends] = vad(x, fs)
 
     %% -------------------音频最小长度60秒---------------------------
@@ -9,7 +10,7 @@ function [w_starts, w_ends] = vad(x, fs)
     end
 
     if (length(x) < MIN_LEN)
-        x = [x zeros(1, MIN_LEN - length(x))];
+        x = [x; zeros(MIN_LEN - length(x), 1)];
     end
 
     maxs = amax_group(x, 50);
@@ -27,8 +28,8 @@ function [w_starts, w_ends] = vad(x, fs)
     %取阈值？
     dth = vad_threshold(tis, sorted_sums, position);
 
-    w_starts = [];
-    w_ends = [];
+    w_starts = int64([]);
+    w_ends = int64([]);
     coder.varsize('w_starts');
     coder.varsize('w_ends');
 

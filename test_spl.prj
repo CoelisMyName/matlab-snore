@@ -1,5 +1,5 @@
 <deployment-project plugin="plugin.coder" plugin-version="R2021a">
-  <configuration file="C:\repo\matlab\gmm\gmm.prj" location="C:\repo\matlab\gmm" name="gmm" target="target.unifiedcoder" target-name="MATLAB Coder">
+  <configuration file="C:\repo\matlab\snore\test_spl.prj" location="C:\repo\matlab\snore" name="test_spl" target="target.unifiedcoder" target-name="MATLAB Coder">
     <profile key="profile.mex">
       <param.BuiltInstrumentedMex />
       <param.RanInstrumentedMex>false</param.RanInstrumentedMex>
@@ -163,7 +163,7 @@
       <param.EnableAutoParallelization>false</param.EnableAutoParallelization>
       <param.EnableVariableSizing>true</param.EnableVariableSizing>
       <param.DynamicMemoryAllocation>option.DynamicMemoryAllocation.Threshold</param.DynamicMemoryAllocation>
-      <param.DynamicMemoryAllocationThreshold>65535</param.DynamicMemoryAllocationThreshold>
+      <param.DynamicMemoryAllocationThreshold>65536</param.DynamicMemoryAllocationThreshold>
       <param.DynamicMemoryAllocationInterface>option.DynamicMemoryAllocationInterface.AUTO</param.DynamicMemoryAllocationInterface>
       <param.RowMajor>option.RowMajor.ColumnMajor</param.RowMajor>
       <param.HighlightPotentialRowMajorIssues>true</param.HighlightPotentialRowMajorIssues>
@@ -214,14 +214,14 @@
       <param.CustomSymbolStrEMXArrayFcn>emx$M$N</param.CustomSymbolStrEMXArrayFcn>
       <param.ReservedNameArray />
       <param.CppStyleConst>false</param.CppStyleConst>
-      <param.RuntimeChecks>true</param.RuntimeChecks>
+      <param.RuntimeChecks>false</param.RuntimeChecks>
       <param.Verbose>false</param.Verbose>
       <param.Verbosity>option.Verbosity.Verbose</param.Verbosity>
-      <param.ReportPotentialDifferences>false</param.ReportPotentialDifferences>
+      <param.ReportPotentialDifferences>true</param.ReportPotentialDifferences>
       <param.GenerateReport>true</param.GenerateReport>
-      <param.GenerateCodeMetricsReport>false</param.GenerateCodeMetricsReport>
-      <param.GenerateCodeReplacementReport>false</param.GenerateCodeReplacementReport>
-      <param.HighlightPotentialDataTypeIssues>false</param.HighlightPotentialDataTypeIssues>
+      <param.GenerateCodeMetricsReport>true</param.GenerateCodeMetricsReport>
+      <param.GenerateCodeReplacementReport>true</param.GenerateCodeReplacementReport>
+      <param.HighlightPotentialDataTypeIssues>true</param.HighlightPotentialDataTypeIssues>
       <param.LaunchReport>false</param.LaunchReport>
       <param.ReportInfoVarName />
       <param.SILDebugging>false</param.SILDebugging>
@@ -298,7 +298,7 @@
       <var.SuppressHardwareChange>false</var.SuppressHardwareChange>
       <param.CastingMode>option.CastingMode.Nominal</param.CastingMode>
       <param.IndentStyle>option.IndentStyle.K&amp;R</param.IndentStyle>
-      <param.IndentSize>2</param.IndentSize>
+      <param.IndentSize>4</param.IndentSize>
       <param.ColumnLimit>80</param.ColumnLimit>
       <param.grt.GenCodeOnly>true</param.grt.GenCodeOnly>
       <param.ConstantFoldingTimeout>40000</param.ConstantFoldingTimeout>
@@ -308,7 +308,7 @@
       <param.IncludeInitializeFcn>true</param.IncludeInitializeFcn>
       <param.IncludeTerminateFcn>true</param.IncludeTerminateFcn>
       <param.GenerateExampleMain>option.GenerateExampleMain.GenerateCodeOnly</param.GenerateExampleMain>
-      <param.PreserveVariableNames>option.PreserveVariableNames.None</param.PreserveVariableNames>
+      <param.PreserveVariableNames>option.PreserveVariableNames.UserNames</param.PreserveVariableNames>
       <param.GenerateMakefile>true</param.GenerateMakefile>
       <param.BuildToolEnable>false</param.BuildToolEnable>
       <param.BuildToolConfiguration />
@@ -356,6 +356,7 @@
         <param.EnableAutoParallelization />
         <param.EnableVariableSizing />
         <param.DynamicMemoryAllocation />
+        <param.DynamicMemoryAllocationThreshold />
         <param.DynamicMemoryAllocationInterface />
         <param.RowMajor />
         <param.HighlightPotentialRowMajorIssues />
@@ -404,12 +405,9 @@
         <param.CustomSymbolStrEMXArrayFcn />
         <param.ReservedNameArray />
         <param.CppStyleConst />
+        <param.RuntimeChecks />
         <param.Verbose />
-        <param.ReportPotentialDifferences />
         <param.GenerateReport />
-        <param.GenerateCodeMetricsReport />
-        <param.GenerateCodeReplacementReport />
-        <param.HighlightPotentialDataTypeIssues />
         <param.LaunchReport />
         <param.ReportInfoVarName />
         <param.SILDebugging />
@@ -471,7 +469,6 @@
         <var.SuppressHardwareChange />
         <param.CastingMode />
         <param.IndentStyle />
-        <param.IndentSize />
         <param.ColumnLimit />
         <param.ConstantFoldingTimeout />
         <param.CompileTimeRecursionLimit />
@@ -480,7 +477,6 @@
         <param.IncludeInitializeFcn />
         <param.IncludeTerminateFcn />
         <param.GenerateExampleMain />
-        <param.PreserveVariableNames />
         <param.GenerateMakefile />
         <param.BuildToolEnable />
         <param.BuildToolConfiguration />
@@ -862,11 +858,11 @@
       </unset>
     </profile>
     <param.objective>option.objective.c</param.objective>
-    <param.WorkflowStep>inputTypes</param.WorkflowStep>
+    <param.WorkflowStep>generateCode</param.WorkflowStep>
     <param.TestSnippets />
     <param.ExternalFcnMajority>column</param.ExternalFcnMajority>
     <param.UseGlobals>option.UseGlobals.No</param.UseGlobals>
-    <param.outputfile>${PROJECT_ROOT}\codegen\lib\gmm\gmm.lib</param.outputfile>
+    <param.outputfile>${PROJECT_ROOT}\codegen\lib\test_spl\test_spl.lib</param.outputfile>
     <param.version>R2012a</param.version>
     <param.HasECoderFeatures>true</param.HasECoderFeatures>
     <param.HasGpuCoder>true</param.HasGpuCoder>
@@ -886,16 +882,16 @@
     <var.MirrorOnOpen>false</var.MirrorOnOpen>
     <param.FixedPointEnabled>false</param.FixedPointEnabled>
     <var.redirectedInputTypeData />
-    <var.DismissScreener>true</var.DismissScreener>
+    <var.DismissScreener>false</var.DismissScreener>
     <param.unifiedParamStorage />
-    <var.gc.lastOutputRoot>codegen\lib\gmm</var.gc.lastOutputRoot>
+    <var.gc.lastOutputRoot>codegen\lib\test_spl</var.gc.lastOutputRoot>
     <var.gc.lastOutputType>C_CODE</var.gc.lastOutputType>
-    <var.gc.preBuildChecksum>3940282744</var.gc.preBuildChecksum>
+    <var.gc.preBuildChecksum>2323735342</var.gc.preBuildChecksum>
     <var.cfi.lastOutputRoot />
     <var.cfi.preBuildChecksum />
     <var.outdatedOnRestore>false</var.outdatedOnRestore>
-    <var.lastUserSourceChecksum>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;&lt;checksum&gt;&lt;includedFiles&gt;&lt;file&gt;C:\repo\matlab\gmm\audspec.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\bark2hz.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\bark_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\BARKenergy.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\cep_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\deltas.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\dolpc.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\enframe.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\fft2barkmx.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\fft2melmx.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\fmt_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\formantfeature.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\GMM_score.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\gtcc_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\hz2bark.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\hz2mel.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\lifter.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\lmultigauss.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\lpc2cep.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\lpc2spec.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\lsum.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\m_lpc.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\m_specgram.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\mel2hz.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\mfcc_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\patient_classifier.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\pitch_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\postaud.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\powspec.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\PR800.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\pr800_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\rastafilt.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\rastaplp.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\se_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\seekfmts1.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\spec2cep.m&lt;/file&gt;&lt;/includedFiles&gt;&lt;value&gt;2070855418&lt;/value&gt;&lt;/checksum&gt;</var.lastUserSourceChecksum>
-    <var.sourceSetState>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;&lt;sourceModel&gt;&lt;primarySourceFiles&gt;&lt;file&gt;C:\repo\matlab\gmm\audspec.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\bark2hz.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\bark_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\BARKenergy.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\cep_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\deltas.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\dolpc.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\enframe.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\fft2barkmx.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\fft2melmx.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\fmt_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\formantfeature.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\GMM_score.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\gtcc_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\hz2bark.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\hz2mel.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\lifter.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\lmultigauss.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\lpc2cep.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\lpc2spec.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\lsum.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\m_lpc.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\m_specgram.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\mel2hz.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\mfcc_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\patient_classifier.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\pitch_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\postaud.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\powspec.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\PR800.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\pr800_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\rastafilt.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\rastaplp.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\se_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\seekfmts1.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\gmm\spec2cep.m&lt;/file&gt;&lt;/primarySourceFiles&gt;&lt;fixedPointSourceFiles/&gt;&lt;fixedPointSourceRegistered&gt;false&lt;/fixedPointSourceRegistered&gt;&lt;fixedPointSourceSelected&gt;false&lt;/fixedPointSourceSelected&gt;&lt;/sourceModel&gt;</var.sourceSetState>
+    <var.lastUserSourceChecksum>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;&lt;checksum&gt;&lt;includedFiles&gt;&lt;file&gt;C:\repo\matlab\snore\aweight.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\cweight.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\octbank.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\octdsgn.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\zweight.m&lt;/file&gt;&lt;/includedFiles&gt;&lt;value&gt;3390912650&lt;/value&gt;&lt;/checksum&gt;</var.lastUserSourceChecksum>
+    <var.sourceSetState>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;&lt;sourceModel&gt;&lt;primarySourceFiles&gt;&lt;file&gt;C:\repo\matlab\snore\aweight.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\cweight.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\octbank.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\octdsgn.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\zweight.m&lt;/file&gt;&lt;/primarySourceFiles&gt;&lt;fixedPointSourceFiles/&gt;&lt;fixedPointSourceRegistered&gt;false&lt;/fixedPointSourceRegistered&gt;&lt;fixedPointSourceSelected&gt;false&lt;/fixedPointSourceSelected&gt;&lt;/sourceModel&gt;</var.sourceSetState>
     <param.forceMexBuild>false</param.forceMexBuild>
     <param.NoDefaultJIT>false</param.NoDefaultJIT>
     <param.configImportActive>false</param.configImportActive>
@@ -904,10 +900,10 @@
     <var.boundToGui>true</var.boundToGui>
     <var.isConfigDialog>false</var.isConfigDialog>
     <var.ecoderEnabled>true</var.ecoderEnabled>
-    <param.mex.outputfile>bark_feat_mex</param.mex.outputfile>
-    <param.grt.outputfile>gmm</param.grt.outputfile>
+    <param.mex.outputfile>aweight_mex</param.mex.outputfile>
+    <param.grt.outputfile>test_spl</param.grt.outputfile>
     <param.artifact>option.target.artifact.lib</param.artifact>
-    <param.outputfile>${PROJECT_ROOT}\codegen\lib\gmm\gmm.lib</param.outputfile>
+    <param.outputfile>${PROJECT_ROOT}\codegen\lib\test_spl\test_spl.lib</param.outputfile>
     <param.CppNamespace />
     <param.CppPackagesToNamespaces>true</param.CppPackagesToNamespaces>
     <param.CppNamespaceForMathworksCode>coder</param.CppNamespaceForMathworksCode>
@@ -1018,6 +1014,7 @@
       <var.MirrorOnOpen />
       <param.FixedPointEnabled />
       <var.redirectedInputTypeData />
+      <var.DismissScreener />
       <param.unifiedParamStorage />
       <var.cfi.lastOutputRoot />
       <var.cfi.preBuildChecksum />
@@ -1115,53 +1112,25 @@
       <param.FixedPointUseDesignRanges />
     </unset>
     <fileset.entrypoints>
-      <file custom-data-expanded="false" value="${PROJECT_ROOT}\bark_feat.m">
-        <Marker>1645772692489</Marker>
+      <file custom-data-expanded="false" value="${PROJECT_ROOT}\aweight.m">
+        <Marker>1645883632306</Marker>
       </file>
-      <file custom-data-expanded="false" value="${PROJECT_ROOT}\cep_feat.m">
-        <Marker>1645772702146</Marker>
+      <file custom-data-expanded="false" value="${PROJECT_ROOT}\cweight.m">
+        <Marker>1645883638210</Marker>
       </file>
-      <file custom-data-expanded="false" value="${PROJECT_ROOT}\fmt_feat.m">
-        <Marker>1645772721443</Marker>
-      </file>
-      <file custom-data-expanded="false" value="${PROJECT_ROOT}\gtcc_feat.m">
-        <Marker>1645772731579</Marker>
-      </file>
-      <file custom-data-expanded="false" value="${PROJECT_ROOT}\mfcc_feat.m">
-        <Marker>1645786810876</Marker>
-      </file>
-      <file custom-data-expanded="false" value="${PROJECT_ROOT}\patient_classifier.m">
-        <Marker>1645861831251</Marker>
-      </file>
-      <file custom-data-expanded="false" value="${PROJECT_ROOT}\pitch_feat.m">
-        <Marker>1645772739152</Marker>
-      </file>
-      <file custom-data-expanded="false" value="${PROJECT_ROOT}\pr800_feat.m">
-        <Marker>1645772748117</Marker>
-      </file>
-      <file custom-data-expanded="false" value="${PROJECT_ROOT}\se_feat.m">
-        <Marker>1645772757487</Marker>
+      <file custom-data-expanded="false" value="${PROJECT_ROOT}\zweight.m">
+        <Marker>1645883646658</Marker>
       </file>
     </fileset.entrypoints>
     <fileset.testbench />
     <fileset.inputtypes>
-      <file custom-data-expanded="false" value="${PROJECT_ROOT}\bark_feat.m">
-        <Inputs fileName="bark_feat.m" functionName="bark_feat">
-          <Input Name="sig" typeId="0" />
-          <Input Name="fs" typeId="1" />
+      <file custom-data-expanded="false" value="${PROJECT_ROOT}\aweight.m">
+        <Inputs fileName="aweight.m" functionName="aweight">
+          <Input Name="x" typeId="0" />
           <idpTable>
             <type typeId="0">
               <Class>double</Class>
               <Size>:inf x 1</Size>
-              <Value />
-              <InitialValue />
-              <UserDefined>true</UserDefined>
-              <Complex>false</Complex>
-              <Sparse>false</Sparse>
-            </type>
-            <type typeId="1">
-              <Class>double</Class>
-              <Size>1 x 1</Size>
               <Value />
               <InitialValue />
               <UserDefined>true</UserDefined>
@@ -1171,23 +1140,13 @@
           </idpTable>
         </Inputs>
       </file>
-      <file custom-data-expanded="false" value="${PROJECT_ROOT}\cep_feat.m">
-        <Inputs fileName="cep_feat.m" functionName="cep_feat">
-          <Input Name="sig" typeId="0" />
-          <Input Name="fs" typeId="1" />
+      <file custom-data-expanded="false" value="${PROJECT_ROOT}\cweight.m">
+        <Inputs fileName="cweight.m" functionName="cweight">
+          <Input Name="x" typeId="0" />
           <idpTable>
             <type typeId="0">
               <Class>double</Class>
               <Size>:inf x 1</Size>
-              <Value />
-              <InitialValue />
-              <UserDefined>true</UserDefined>
-              <Complex>false</Complex>
-              <Sparse>false</Sparse>
-            </type>
-            <type typeId="1">
-              <Class>double</Class>
-              <Size>1 x 1</Size>
               <Value />
               <InitialValue />
               <UserDefined>true</UserDefined>
@@ -1197,214 +1156,13 @@
           </idpTable>
         </Inputs>
       </file>
-      <file custom-data-expanded="false" value="${PROJECT_ROOT}\fmt_feat.m">
-        <Inputs fileName="fmt_feat.m" functionName="fmt_feat">
-          <Input Name="sig" typeId="0" />
-          <Input Name="fs" typeId="1" />
+      <file custom-data-expanded="false" value="${PROJECT_ROOT}\zweight.m">
+        <Inputs fileName="zweight.m" functionName="zweight">
+          <Input Name="x" typeId="0" />
           <idpTable>
             <type typeId="0">
               <Class>double</Class>
               <Size>:inf x 1</Size>
-              <Value />
-              <InitialValue />
-              <UserDefined>true</UserDefined>
-              <Complex>false</Complex>
-              <Sparse>false</Sparse>
-            </type>
-            <type typeId="1">
-              <Class>double</Class>
-              <Size>1 x 1</Size>
-              <Value />
-              <InitialValue />
-              <UserDefined>true</UserDefined>
-              <Complex>false</Complex>
-              <Sparse>false</Sparse>
-            </type>
-          </idpTable>
-        </Inputs>
-      </file>
-      <file custom-data-expanded="false" value="${PROJECT_ROOT}\gtcc_feat.m">
-        <Inputs fileName="gtcc_feat.m" functionName="gtcc_feat">
-          <Input Name="sig" typeId="0" />
-          <Input Name="fs" typeId="1" />
-          <idpTable>
-            <type typeId="0">
-              <Class>double</Class>
-              <Size>:inf x 1</Size>
-              <Value />
-              <InitialValue />
-              <UserDefined>true</UserDefined>
-              <Complex>false</Complex>
-              <Sparse>false</Sparse>
-            </type>
-            <type typeId="1">
-              <Class>double</Class>
-              <Size>1 x 1</Size>
-              <Value />
-              <InitialValue />
-              <UserDefined>true</UserDefined>
-              <Complex>false</Complex>
-              <Sparse>false</Sparse>
-            </type>
-          </idpTable>
-        </Inputs>
-      </file>
-      <file custom-data-expanded="false" value="${PROJECT_ROOT}\mfcc_feat.m">
-        <Inputs fileName="mfcc_feat.m" functionName="mfcc_feat">
-          <Input Name="sig" typeId="0" />
-          <Input Name="fs" typeId="1" />
-          <idpTable>
-            <type typeId="0">
-              <Class>double</Class>
-              <Size>:inf x 1</Size>
-              <Value />
-              <InitialValue />
-              <UserDefined>true</UserDefined>
-              <Complex>false</Complex>
-              <Sparse>false</Sparse>
-            </type>
-            <type typeId="1">
-              <Class>double</Class>
-              <Size>1 x 1</Size>
-              <Value />
-              <InitialValue />
-              <UserDefined>true</UserDefined>
-              <Complex>false</Complex>
-              <Sparse>false</Sparse>
-            </type>
-          </idpTable>
-        </Inputs>
-      </file>
-      <file custom-data-expanded="false" value="${PROJECT_ROOT}\patient_classifier.m">
-        <Inputs fileName="patient_classifier.m" functionName="patient_classifier">
-          <Input Name="MFCC_feature" typeId="0" />
-          <Input Name="BARKEE" typeId="1" />
-          <Input Name="period_mean" typeId="2" />
-          <Input Name="period_max" typeId="2" />
-          <Input Name="period_min" typeId="2" />
-          <Input Name="period_var" typeId="2" />
-          <Input Name="cep" typeId="0" />
-          <Input Name="Formant1" typeId="2" />
-          <Input Name="Formant2" typeId="2" />
-          <Input Name="Formant3" typeId="2" />
-          <Input Name="GTCCmean" typeId="3" />
-          <Input Name="PR800mean" typeId="2" />
-          <Input Name="PR800max" typeId="2" />
-          <Input Name="PR800min" typeId="2" />
-          <Input Name="PR800var" typeId="2" />
-          <Input Name="SE_mean" typeId="2" />
-          <Input Name="SE_max" typeId="2" />
-          <Input Name="SE_min" typeId="2" />
-          <Input Name="SE_var" typeId="2" />
-          <idpTable>
-            <type typeId="0">
-              <Class>double</Class>
-              <Size>:inf x 39</Size>
-              <Value />
-              <InitialValue />
-              <UserDefined>true</UserDefined>
-              <Complex>false</Complex>
-              <Sparse>false</Sparse>
-            </type>
-            <type typeId="1">
-              <Class>double</Class>
-              <Size>:inf x 17</Size>
-              <Value />
-              <InitialValue />
-              <UserDefined>true</UserDefined>
-              <Complex>false</Complex>
-              <Sparse>false</Sparse>
-            </type>
-            <type typeId="2">
-              <Class>double</Class>
-              <Size>:inf x 1</Size>
-              <Value />
-              <InitialValue />
-              <UserDefined>true</UserDefined>
-              <Complex>false</Complex>
-              <Sparse>false</Sparse>
-            </type>
-            <type typeId="3">
-              <Class>double</Class>
-              <Size>:inf x 20</Size>
-              <Value />
-              <InitialValue />
-              <UserDefined>true</UserDefined>
-              <Complex>false</Complex>
-              <Sparse>false</Sparse>
-            </type>
-          </idpTable>
-        </Inputs>
-      </file>
-      <file custom-data-expanded="false" value="${PROJECT_ROOT}\pitch_feat.m">
-        <Inputs fileName="pitch_feat.m" functionName="pitch_feat">
-          <Input Name="sig" typeId="0" />
-          <Input Name="fs" typeId="1" />
-          <idpTable>
-            <type typeId="0">
-              <Class>double</Class>
-              <Size>:inf x 1</Size>
-              <Value />
-              <InitialValue />
-              <UserDefined>true</UserDefined>
-              <Complex>false</Complex>
-              <Sparse>false</Sparse>
-            </type>
-            <type typeId="1">
-              <Class>double</Class>
-              <Size>1 x 1</Size>
-              <Value />
-              <InitialValue />
-              <UserDefined>true</UserDefined>
-              <Complex>false</Complex>
-              <Sparse>false</Sparse>
-            </type>
-          </idpTable>
-        </Inputs>
-      </file>
-      <file custom-data-expanded="false" value="${PROJECT_ROOT}\pr800_feat.m">
-        <Inputs fileName="pr800_feat.m" functionName="pr800_feat">
-          <Input Name="sig" typeId="0" />
-          <Input Name="fs" typeId="1" />
-          <idpTable>
-            <type typeId="0">
-              <Class>double</Class>
-              <Size>:inf x 1</Size>
-              <Value />
-              <InitialValue />
-              <UserDefined>true</UserDefined>
-              <Complex>false</Complex>
-              <Sparse>false</Sparse>
-            </type>
-            <type typeId="1">
-              <Class>double</Class>
-              <Size>1 x 1</Size>
-              <Value />
-              <InitialValue />
-              <UserDefined>true</UserDefined>
-              <Complex>false</Complex>
-              <Sparse>false</Sparse>
-            </type>
-          </idpTable>
-        </Inputs>
-      </file>
-      <file custom-data-expanded="false" value="${PROJECT_ROOT}\se_feat.m">
-        <Inputs fileName="se_feat.m" functionName="se_feat">
-          <Input Name="sig" typeId="0" />
-          <Input Name="fs" typeId="1" />
-          <idpTable>
-            <type typeId="0">
-              <Class>double</Class>
-              <Size>:inf x 1</Size>
-              <Value />
-              <InitialValue />
-              <UserDefined>true</UserDefined>
-              <Complex>false</Complex>
-              <Sparse>false</Sparse>
-            </type>
-            <type typeId="1">
-              <Class>double</Class>
-              <Size>1 x 1</Size>
               <Value />
               <InitialValue />
               <UserDefined>true</UserDefined>
@@ -1416,7 +1174,7 @@
       </file>
     </fileset.inputtypes>
     <build-deliverables>
-      <file location="${PROJECT_ROOT}\codegen\lib\gmm" name="gmm.lib" optional="false">C:\repo\matlab\gmm\codegen\lib\gmm\gmm.lib</file>
+      <file location="${PROJECT_ROOT}\codegen\lib\test_spl" name="test_spl.lib" optional="false">C:\repo\matlab\snore\codegen\lib\test_spl\test_spl.lib</file>
     </build-deliverables>
     <workflow />
     <matlab>

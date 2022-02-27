@@ -1,4 +1,5 @@
-function [predict_label] = classifier(x, w_starts, w_ends, fs)
+% x(inf,1) w_starts(inf,1) w_ends(inf,1) fs(1,1) predict_label(1,1)
+function [predict_label] = classifier(x, fs, w_starts, w_ends)
     N = min(length(w_starts), length(w_ends));
 
     period_mean = zeros(1, N);
@@ -19,7 +20,7 @@ function [predict_label] = classifier(x, w_starts, w_ends, fs)
     for i = 1:N
         wlen = fix(0.02 * fs);
         inc = fix(0.5 * wlen);
-        sig = x(w_starts(i):w_ends(i))';
+        sig = x(w_starts(i):w_ends(i));
         sig = sig - mean(sig);
         sig = sig / max(abs(sig));
         sig1 = sig;
