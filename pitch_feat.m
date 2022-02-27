@@ -1,4 +1,4 @@
-function [period_mean, period_min, period_max, period_var] = pitch_feat(sig, fs)
+function [period_mean, period_max, period_min, period_var] = pitch_feat(sig, fs)
     f0 = [0];
     % 适配Coder
     switch fs
@@ -18,7 +18,7 @@ function [period_mean, period_min, period_max, period_var] = pitch_feat(sig, fs)
             f0 = pitch(sig, 48000, 'WindowLength', 2400, 'OverlapLength', 1200);
     end
     period_mean = mean(f0); %计算基音周期的平均值
-    period_min = min(f0); %计算基音周期的最小值
     period_max = max(f0); %计算基音周期的最大值
+    period_min = min(f0); %计算基音周期的最小值
     period_var = var(f0); %计算基音周期的方差
 end
