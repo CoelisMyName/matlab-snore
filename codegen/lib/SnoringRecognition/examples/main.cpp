@@ -2,7 +2,7 @@
 // File: main.cpp
 //
 // MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 00:06:11
+// C/C++ source code generated on  : 27-Feb-2022 11:31:05
 //
 
 /*************************************************************************/
@@ -275,7 +275,7 @@ static void main_cep_feat()
 //
 static void main_classifier()
 {
-    coder::array<double, 2U> predict_label;
+    coder::array<double, 1U> predict_label;
     coder::array<double, 1U> x;
     coder::array<long long, 1U> w_starts_tmp;
     // Initialize function 'classifier' input arguments.
@@ -359,17 +359,17 @@ static void main_mfcc_feat()
 //
 static void main_noise_segment()
 {
-    coder::array<long long, 1U> w_starts_tmp;
+    coder::array<long long, 1U> starts_tmp;
     double fs_tmp;
     double olength;
     double ostart;
     // Initialize function 'noise_segment' input arguments.
-    // Initialize function input argument 'w_starts'.
-    w_starts_tmp = argInit_Unboundedx1_int64_T();
-    // Initialize function input argument 'w_ends'.
+    // Initialize function input argument 'starts'.
+    starts_tmp = argInit_Unboundedx1_int64_T();
+    // Initialize function input argument 'ends'.
     fs_tmp = argInit_real_T();
     // Call the entry-point 'noise_segment'.
-    noise_segment(w_starts_tmp, w_starts_tmp, fs_tmp, fs_tmp, fs_tmp, &ostart,
+    noise_segment(starts_tmp, starts_tmp, fs_tmp, fs_tmp, fs_tmp, &ostart,
                   &olength);
 }
 
@@ -481,8 +481,8 @@ static void main_se_feat()
 static void main_vad()
 {
     coder::array<double, 1U> x;
-    coder::array<long long, 2U> w_ends;
-    coder::array<long long, 2U> w_starts;
+    coder::array<long long, 1U> w_ends;
+    coder::array<long long, 1U> w_starts;
     // Initialize function 'vad' input arguments.
     // Initialize function input argument 'x'.
     x = argInit_Unboundedx1_real_T();

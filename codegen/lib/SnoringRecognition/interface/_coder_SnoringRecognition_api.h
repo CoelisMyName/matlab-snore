@@ -2,7 +2,7 @@
 // File: _coder_SnoringRecognition_api.h
 //
 // MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 00:06:11
+// C/C++ source code generated on  : 27-Feb-2022 11:31:05
 //
 
 #ifndef _CODER_SNORINGRECOGNITION_API_H
@@ -46,7 +46,7 @@ void cep_feat_api(const mxArray *const prhs[2], const mxArray **plhs);
 void classifier(coder::array<real_T, 1U> *x, real_T fs,
                 coder::array<int64_T, 1U> *w_starts,
                 coder::array<int64_T, 1U> *w_ends,
-                coder::array<real_T, 2U> *predict_label);
+                coder::array<real_T, 1U> *predict_label);
 
 void classifier_api(const mxArray *const prhs[4], const mxArray **plhs);
 
@@ -70,8 +70,8 @@ void mfcc_feat(coder::array<real_T, 1U> *sig, real_T fs,
 
 void mfcc_feat_api(const mxArray *const prhs[2], const mxArray **plhs);
 
-void noise_segment(coder::array<int64_T, 1U> *w_starts,
-                   coder::array<int64_T, 1U> *w_ends, real_T fs, real_T min_gap,
+void noise_segment(coder::array<int64_T, 1U> *starts,
+                   coder::array<int64_T, 1U> *ends, real_T fs, real_T min_gap,
                    real_T margin, real_T *ostart, real_T *olength);
 
 void noise_segment_api(const mxArray *const prhs[5], int32_T nlhs,
@@ -111,8 +111,8 @@ void se_feat_api(const mxArray *const prhs[2], int32_T nlhs,
                  const mxArray *plhs[4]);
 
 void vad(coder::array<real_T, 1U> *x, real_T fs,
-         coder::array<int64_T, 2U> *w_starts,
-         coder::array<int64_T, 2U> *w_ends);
+         coder::array<int64_T, 1U> *w_starts,
+         coder::array<int64_T, 1U> *w_ends);
 
 void vad_api(const mxArray *const prhs[2], int32_T nlhs,
              const mxArray *plhs[2]);

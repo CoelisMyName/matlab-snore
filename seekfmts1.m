@@ -19,6 +19,8 @@ function [fmt] = seekfmts1(sig, Nt, fs, Nlpc)
         k = 1; % 初始化
         yf = [];
         bandw = [];
+        coder.varsize('yf');
+        coder.varsize('bandw');
 
         for i = 1:length(a) - 1
             re = real(rts(i)); % 取根之实部

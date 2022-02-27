@@ -2,7 +2,7 @@
 // File: hist.cpp
 //
 // MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 00:06:11
+// C/C++ source code generated on  : 27-Feb-2022 11:31:05
 //
 
 // Include Files
@@ -15,18 +15,18 @@
 
 // Function Definitions
 //
-// Arguments    : const ::coder::array<double, 2U> &Y
+// Arguments    : const ::coder::array<double, 1U> &Y
 //                double no[200]
 //                double xo[200]
 // Return Type  : void
 //
 namespace coder {
-void hist(const ::coder::array<double, 2U> &Y, double no[200], double xo[200])
+void hist(const ::coder::array<double, 1U> &Y, double no[200], double xo[200])
 {
     double edges[201];
     double nn[201];
     int low_ip1;
-    if (Y.size(1) == 0) {
+    if (Y.size(0) == 0) {
         for (int i = 0; i < 200; i++) {
             xo[i] = static_cast<double>(i) + 1.0;
             no[i] = 0.0;
@@ -37,12 +37,12 @@ void hist(const ::coder::array<double, 2U> &Y, double no[200], double xo[200])
         int i;
         int k;
         int ny;
-        ny = Y.size(1);
+        ny = Y.size(0);
         k = 0;
         while ((k + 1 <= ny) && (rtIsInf(Y[k]) || rtIsNaN(Y[k]))) {
             k++;
         }
-        if (k + 1 > Y.size(1)) {
+        if (k + 1 > Y.size(0)) {
             miny = 0.0;
             delta2 = 0.0;
         } else {
@@ -113,12 +113,11 @@ void hist(const ::coder::array<double, 2U> &Y, double no[200], double xo[200])
             edges[k + 1] = miny + delta2;
         }
         memset(&nn[0], 0, 201U * sizeof(double));
-        i = Y.size(1);
+        i = Y.size(0);
         for (k = 0; k < i; k++) {
             ny = 0;
-            delta2 = Y[k];
-            if (!rtIsNaN(delta2)) {
-                if ((delta2 >= edges[0]) && (delta2 < edges[200])) {
+            if (!rtIsNaN(Y[k])) {
+                if ((Y[k] >= edges[0]) && (Y[k] < edges[200])) {
                     int high_i;
                     ny = 1;
                     low_ip1 = 2;

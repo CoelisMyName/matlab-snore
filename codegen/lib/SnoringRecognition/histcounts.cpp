@@ -2,7 +2,7 @@
 // File: histcounts.cpp
 //
 // MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 00:06:11
+// C/C++ source code generated on  : 27-Feb-2022 11:31:05
 //
 
 // Include Files
@@ -16,7 +16,7 @@
 
 // Function Definitions
 //
-// Arguments    : const ::coder::array<double, 2U> &x
+// Arguments    : const ::coder::array<double, 1U> &x
 //                double n_data[]
 //                int n_size[2]
 //                double edges_data[]
@@ -24,7 +24,7 @@
 // Return Type  : void
 //
 namespace coder {
-void histcounts(const ::coder::array<double, 2U> &x, double n_data[],
+void histcounts(const ::coder::array<double, 1U> &x, double n_data[],
                 int n_size[2], double edges_data[], int edges_size[2])
 {
     double HighLimit;
@@ -41,12 +41,12 @@ void histcounts(const ::coder::array<double, 2U> &x, double n_data[],
     int low_ip1;
     int mid_i;
     int nx;
-    nx = x.size(1);
+    nx = x.size(0);
     k = 0;
     while ((k + 1 <= nx) && (rtIsInf(x[k]) || rtIsNaN(x[k]))) {
         k++;
     }
-    if (k + 1 > x.size(1)) {
+    if (k + 1 > x.size(0)) {
         LowLimit = 0.0;
         low_i = 0;
     } else {
@@ -56,12 +56,12 @@ void histcounts(const ::coder::array<double, 2U> &x, double n_data[],
     HighLimit = LowLimit;
     i = k + 2;
     for (low_ip1 = i; low_ip1 <= nx; low_ip1++) {
-        xScale = x[low_ip1 - 1];
-        if ((!rtIsInf(xScale)) && (!rtIsNaN(xScale))) {
-            if (xScale < LowLimit) {
-                LowLimit = xScale;
-            } else if (xScale > HighLimit) {
-                HighLimit = xScale;
+        epsxScale = x[low_ip1 - 1];
+        if ((!rtIsInf(epsxScale)) && (!rtIsNaN(epsxScale))) {
+            if (epsxScale < LowLimit) {
+                LowLimit = epsxScale;
+            } else if (epsxScale > HighLimit) {
+                HighLimit = epsxScale;
             }
             low_i++;
         }
@@ -111,18 +111,18 @@ void histcounts(const ::coder::array<double, 2U> &x, double n_data[],
                 leftEdge = -1.7976931348623157E+308;
             }
             epsxScale = HighLimit - leftEdge;
-            binWidth = epsxScale / 20.0;
+            xScale = epsxScale / 20.0;
             epsxScale =
-                rt_powd_snf(10.0, floor(log10(epsxScale / 19.0 - binWidth)));
-            binWidth = epsxScale * ceil(binWidth / epsxScale);
+                rt_powd_snf(10.0, floor(log10(epsxScale / 19.0 - xScale)));
+            binWidth = epsxScale * ceil(xScale / epsxScale);
             u0 = leftEdge + 20.0 * binWidth;
             if ((u0 > HighLimit) || rtIsNaN(HighLimit)) {
-                epsxScale = u0;
+                xScale = u0;
             } else {
-                epsxScale = HighLimit;
+                xScale = HighLimit;
             }
-            if (!(epsxScale < 1.7976931348623157E+308)) {
-                epsxScale = 1.7976931348623157E+308;
+            if (!(xScale < 1.7976931348623157E+308)) {
+                xScale = 1.7976931348623157E+308;
             }
         } else {
             if (b && b1) {
@@ -140,8 +140,8 @@ void histcounts(const ::coder::array<double, 2U> &x, double n_data[],
                 epsxScale = 1.0;
             }
             leftEdge = floor(2.0 * (LowLimit - epsxScale / 4.0)) / 2.0;
-            epsxScale = ceil(2.0 * (HighLimit + epsxScale / 4.0)) / 2.0;
-            binWidth = (epsxScale - leftEdge) / 20.0;
+            xScale = ceil(2.0 * (HighLimit + epsxScale / 4.0)) / 2.0;
+            binWidth = (xScale - leftEdge) / 20.0;
         }
         if ((!rtIsInf(binWidth)) && (!rtIsNaN(binWidth))) {
             edges_size[0] = 1;
@@ -152,25 +152,25 @@ void histcounts(const ::coder::array<double, 2U> &x, double n_data[],
                 edges_data[low_i + 1] =
                     leftEdge + (static_cast<double>(low_i) + 1.0) * binWidth;
             }
-            edges_data[20] = epsxScale;
+            edges_data[20] = xScale;
         } else {
             edges_size[0] = 1;
             edges_size[1] = 21;
-            edges_data[20] = epsxScale;
+            edges_data[20] = xScale;
             edges_data[0] = leftEdge;
-            if (leftEdge == -epsxScale) {
-                epsxScale /= 20.0;
+            if (leftEdge == -xScale) {
+                epsxScale = xScale / 20.0;
                 for (k = 0; k < 19; k++) {
                     edges_data[k + 1] =
                         (2.0 * (static_cast<double>(k) + 2.0) - 22.0) *
                         epsxScale;
                 }
                 edges_data[10] = 0.0;
-            } else if (((leftEdge < 0.0) != (epsxScale < 0.0)) &&
+            } else if (((leftEdge < 0.0) != (xScale < 0.0)) &&
                        ((fabs(leftEdge) > 8.9884656743115785E+307) ||
-                        (fabs(epsxScale) > 8.9884656743115785E+307))) {
+                        (fabs(xScale) > 8.9884656743115785E+307))) {
                 binWidth = leftEdge / 20.0;
-                epsxScale /= 20.0;
+                epsxScale = xScale / 20.0;
                 for (k = 0; k < 19; k++) {
                     edges_data[k + 1] =
                         (leftEdge +
@@ -178,7 +178,7 @@ void histcounts(const ::coder::array<double, 2U> &x, double n_data[],
                         binWidth * (static_cast<double>(k) + 1.0);
                 }
             } else {
-                binWidth = (epsxScale - leftEdge) / 20.0;
+                binWidth = (xScale - leftEdge) / 20.0;
                 for (k = 0; k < 19; k++) {
                     edges_data[k + 1] =
                         leftEdge + (static_cast<double>(k) + 1.0) * binWidth;
@@ -193,18 +193,17 @@ void histcounts(const ::coder::array<double, 2U> &x, double n_data[],
         }
     }
     memset(&ni_data[0], 0, 20U * sizeof(int));
-    nx = x.size(1);
+    nx = x.size(0);
     leftEdge = edges_data[0];
     epsxScale = edges_data[1] - edges_data[0];
     for (k = 0; k < nx; k++) {
-        xScale = x[k];
-        if ((xScale >= leftEdge) && (xScale <= edges_data[20])) {
+        if ((x[k] >= leftEdge) && (x[k] <= edges_data[20])) {
             boolean_T guard1 = false;
-            binWidth = ceil((xScale - leftEdge) / epsxScale);
+            xScale = ceil((x[k] - leftEdge) / epsxScale);
             guard1 = false;
-            if ((binWidth >= 1.0) && (binWidth < 21.0)) {
-                i = static_cast<int>(binWidth);
-                if ((xScale >= edges_data[i - 1]) && (xScale < edges_data[i])) {
+            if ((xScale >= 1.0) && (xScale < 21.0)) {
+                i = static_cast<int>(xScale);
+                if ((x[k] >= edges_data[i - 1]) && (x[k] < edges_data[i])) {
                     ni_data[i - 1]++;
                 } else {
                     guard1 = true;

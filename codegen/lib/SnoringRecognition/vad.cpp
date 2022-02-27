@@ -2,7 +2,7 @@
 // File: vad.cpp
 //
 // MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 00:06:11
+// C/C++ source code generated on  : 27-Feb-2022 11:31:05
 //
 
 // Include Files
@@ -121,19 +121,19 @@ static void mul_wide_s64(long long in0, long long in1,
 //
 // Arguments    : coder::array<double, 1U> &x
 //                double fs
-//                coder::array<long long, 2U> &w_starts
-//                coder::array<long long, 2U> &w_ends
+//                coder::array<long long, 1U> &w_starts
+//                coder::array<long long, 1U> &w_ends
 // Return Type  : void
 //
 void vad(coder::array<double, 1U> &x, double fs,
-         coder::array<long long, 2U> &w_starts,
-         coder::array<long long, 2U> &w_ends)
+         coder::array<long long, 1U> &w_starts,
+         coder::array<long long, 1U> &w_ends)
 {
-    coder::array<double, 2U> b_sorted_sums;
-    coder::array<double, 2U> b_sums;
-    coder::array<double, 2U> maxs;
-    coder::array<double, 2U> sorted_sums;
-    coder::array<double, 2U> sums;
+    coder::array<double, 1U> b_sums;
+    coder::array<double, 1U> b_x;
+    coder::array<double, 1U> c_x;
+    coder::array<double, 1U> maxs;
+    coder::array<double, 1U> sums;
     coder::array<long long, 1U> b_w_ends;
     coder::array<long long, 1U> b_w_starts;
     coder::array<long long, 1U> nx1;
@@ -178,8 +178,8 @@ void vad(coder::array<double, 1U> &x, double fs,
     // 'vad:17' sums = sum_group(maxs, 50);
     sum_group(maxs, sums);
     // 'vad:18' sums = median_filter(sums, 10);
-    b_sums.set_size(1, sums.size(1));
-    loop_ub = sums.size(0) * sums.size(1) - 1;
+    b_sums.set_size(sums.size(0));
+    loop_ub = sums.size(0) - 1;
     for (i = 0; i <= loop_ub; i++) {
         b_sums[i] = sums[i];
     }
@@ -192,15 +192,15 @@ void vad(coder::array<double, 1U> &x, double fs,
     coder::internal::sort(bins);
     // 'vad:23' tis = bins(end) / bins(end - 1);
     // 'vad:24' sorted_sums = sort(sums);
-    sorted_sums.set_size(1, sums.size(1));
-    loop_ub = sums.size(1);
+    b_x.set_size(sums.size(0));
+    loop_ub = sums.size(0);
     for (i = 0; i < loop_ub; i++) {
-        sorted_sums[i] = sums[i];
+        b_x[i] = sums[i];
     }
-    coder::internal::b_sort(sorted_sums);
+    coder::internal::sort(b_x);
     // 前60%的平均值
     // 'vad:26' ddth = mean(sorted_sums(1:fix(length(sorted_sums) * 0.6)));
-    ex = static_cast<double>(sorted_sums.size(1)) * 0.6;
+    ex = static_cast<double>(b_x.size(0)) * 0.6;
     coder::b_fix(&ex);
     if (1.0 > ex) {
         loop_ub = 0;
@@ -209,43 +209,32 @@ void vad(coder::array<double, 1U> &x, double fs,
     }
     // 取阈值？
     // 'vad:29' dth = vad_threshold(tis, sorted_sums, position);
-    dth = vad_threshold(bins[199] / bins[198], sorted_sums,
-                        static_cast<double>(iindx));
-    // 'vad:31' w_starts = int64([]);
-    w_starts.set_size(0, 0);
-    // 'vad:32' w_ends = int64([]);
-    w_ends.set_size(0, 0);
-    // 'vad:33' coder.varsize('w_starts');
-    // 'vad:34' coder.varsize('w_ends');
-    // 'vad:36' if max(sorted_sums) >= ddth * 5
-    b_sorted_sums.set_size(1, loop_ub);
+    dth = vad_threshold(bins[199] / bins[198], b_x, static_cast<double>(iindx));
+    // 'vad:31' coder.varsize('w_starts');
+    // 'vad:32' coder.varsize('w_ends');
+    // 'vad:34' if max(sorted_sums) >= ddth * 5
+    c_x.set_size(loop_ub);
     for (i = 0; i < loop_ub; i++) {
-        b_sorted_sums[i] = sorted_sums[i];
+        c_x[i] = b_x[i];
     }
-    if (coder::internal::maximum(sorted_sums) >=
-        coder::mean(b_sorted_sums) * 5.0) {
-        long long q0;
-        // 'vad:37' [nx1, nx2] = vad_below_threshold(sums, dth, 6);
+    if (coder::internal::maximum(b_x) >= coder::mean(c_x) * 5.0) {
+        // 'vad:35' [nx1, nx2] = vad_below_threshold(sums, dth, 6);
         vad_below_threshold(sums, dth, nx1, nx2);
-        // 'vad:38' [nx3, nx4] = vad_wave(sums, nx1, nx2);
+        // 'vad:36' [nx3, nx4] = vad_wave(sums, nx1, nx2);
         vad_wave(sums, nx1, nx2, nx3, nx4);
         //  映射至实际区间
-        // 'vad:40' w_starts = (nx3 - 1) * 2500 + 1;
-        b_w_ends.set_size(nx3.size(0));
+        // 'vad:38' w_starts = (nx3 - 1) * 2500 + 1;
+        w_starts.set_size(nx3.size(0));
         loop_ub = nx3.size(0);
         for (i = 0; i < loop_ub; i++) {
+            long long q0;
             q0 = nx3[i];
             if (q0 < -9223372036854775807LL) {
                 q0 = MIN_int64_T;
             } else {
                 q0--;
             }
-            b_w_ends[i] = mul_s64_sat(q0, 2500LL);
-        }
-        w_starts.set_size(b_w_ends.size(0), 1);
-        loop_ub = b_w_ends.size(0);
-        for (i = 0; i < loop_ub; i++) {
-            q0 = b_w_ends[i];
+            q0 = mul_s64_sat(q0, 2500LL);
             if (q0 > 9223372036854775806LL) {
                 q0 = MAX_int64_T;
             } else {
@@ -253,33 +242,34 @@ void vad(coder::array<double, 1U> &x, double fs,
             }
             w_starts[i] = q0;
         }
-        // 'vad:41' w_ends = nx4 * 2500;
-        b_w_ends.set_size(nx4.size(0));
+        // 'vad:39' w_ends = nx4 * 2500;
+        w_ends.set_size(nx4.size(0));
         loop_ub = nx4.size(0);
         for (i = 0; i < loop_ub; i++) {
-            b_w_ends[i] = mul_s64_sat(nx4[i], 2500LL);
+            w_ends[i] = mul_s64_sat(nx4[i], 2500LL);
         }
-        w_ends.set_size(b_w_ends.size(0), 1);
-        loop_ub = b_w_ends.size(0);
-        for (i = 0; i < loop_ub; i++) {
-            w_ends[i] = b_w_ends[i];
-        }
+    } else {
+        // 'vad:40' else
+        // 'vad:41' w_starts = zeros(0,1,'int64');
+        w_starts.set_size(0);
+        // 'vad:42' w_ends = zeros(0,1,'int64');
+        w_ends.set_size(0);
     }
     // 截取段过滤
-    // 'vad:45' [w_starts, w_ends] = vad_length_filter(w_starts, w_ends, 0.03 *
+    // 'vad:46' [w_starts, w_ends] = vad_length_filter(w_starts, w_ends, 0.03 *
     // fs, 5 * fs);
-    vad_length_filter(w_starts, w_ends, 0.03 * fs, 5.0 * fs, b_w_starts,
-                      b_w_ends);
-    w_starts.set_size(b_w_starts.size(0), 1);
-    loop_ub = b_w_starts.size(0);
-    for (i = 0; i < loop_ub; i++) {
-        w_starts[i] = b_w_starts[i];
+    b_w_starts.set_size(w_starts.size(0));
+    loop_ub = w_starts.size(0) - 1;
+    for (i = 0; i <= loop_ub; i++) {
+        b_w_starts[i] = w_starts[i];
     }
-    w_ends.set_size(b_w_ends.size(0), 1);
-    loop_ub = b_w_ends.size(0);
-    for (i = 0; i < loop_ub; i++) {
-        w_ends[i] = b_w_ends[i];
+    b_w_ends.set_size(w_ends.size(0));
+    loop_ub = w_ends.size(0) - 1;
+    for (i = 0; i <= loop_ub; i++) {
+        b_w_ends[i] = w_ends[i];
     }
+    vad_length_filter(b_w_starts, b_w_ends, 0.03 * fs, 5.0 * fs, w_starts,
+                      w_ends);
 }
 
 //

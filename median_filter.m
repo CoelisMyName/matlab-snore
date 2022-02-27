@@ -1,7 +1,7 @@
 function [output] = median_filter(array, window)
     len = length(array);
-    output = zeros(1, len);
-    temp = zeros(1, window);
+    output = zeros(len, 1);
+    temp = zeros(window, 1);
     lm = -floor(window / 2);
     rm = floor((window - 1) / 2);
 

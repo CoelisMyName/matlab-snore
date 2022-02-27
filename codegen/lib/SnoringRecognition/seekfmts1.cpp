@@ -2,7 +2,7 @@
 // File: seekfmts1.cpp
 //
 // MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 00:06:11
+// C/C++ source code generated on  : 27-Feb-2022 11:31:05
 //
 
 // Include Files
@@ -106,44 +106,46 @@ void seekfmts1(const coder::array<double, 1U> &sig, double Nt, double fs,
         // 'seekfmts1:20' yf = [];
         yf.set_size(1, 0);
         // 'seekfmts1:21' bandw = [];
-        // 'seekfmts1:23' for i = 1:length(a) - 1
-        i1 = coder::internal::intlength(1, a_size[1]);
+        // 'seekfmts1:22' coder.varsize('yf');
+        // 'seekfmts1:23' coder.varsize('bandw');
+        // 'seekfmts1:25' for i = 1:length(a) - 1
+        i1 = coder::internal::intlength(a_size[1]);
         for (int b_i = 0; b_i <= i1 - 2; b_i++) {
             double formn;
-            // 'seekfmts1:24' re = real(rts(i));
+            // 'seekfmts1:26' re = real(rts(i));
             //  取根之实部
-            // 'seekfmts1:25' im = imag(rts(i));
+            // 'seekfmts1:27' im = imag(rts(i));
             //  取根之虚部
-            // 'seekfmts1:26' formn = const * atan2(im, re);
+            // 'seekfmts1:28' formn = const * atan2(im, re);
             formn =
                 b_const * coder::b_atan2(rts_data[b_i].im, rts_data[b_i].re);
             //  计算共振峰频率
-            // 'seekfmts1:27' bw = -2 * const * log(abs(rts(i)));
+            // 'seekfmts1:29' bw = -2 * const * log(abs(rts(i)));
             d = coder::b_abs(rts_data[b_i]);
             coder::b_log(&d);
             //  计算带宽
-            // 'seekfmts1:29' if formn > 150 && bw < 700 && formn < fs / 2
+            // 'seekfmts1:31' if formn > 150 && bw < 700 && formn < fs / 2
             if ((formn > 150.0) && (-2.0 * b_const * d < 700.0) &&
                 (formn < fs / 2.0)) {
                 //  满足条件方能成共振峰和带宽
-                // 'seekfmts1:30' yf = [yf formn];
+                // 'seekfmts1:32' yf = [yf formn];
                 i2 = yf.size(1);
                 yf.set_size(yf.size(0), yf.size(1) + 1);
                 yf[i2] = formn;
-                // 'seekfmts1:31' bandw = [bandw, bw];
-                // 'seekfmts1:32' k = k + 1;
+                // 'seekfmts1:33' bandw = [bandw, bw];
+                // 'seekfmts1:34' k = k + 1;
             }
         }
-        // 'seekfmts1:37' [y, ind] = sort(yf);
+        // 'seekfmts1:39' [y, ind] = sort(yf);
         coder::internal::sort(yf, b_yf);
         //  排序
-        // 'seekfmts1:38' bw = bandw(ind);
-        // 'seekfmts1:39' F = [NaN NaN NaN];
+        // 'seekfmts1:40' bw = bandw(ind);
+        // 'seekfmts1:41' F = [NaN NaN NaN];
         F[0] = rtNaN;
         F[1] = rtNaN;
         F[2] = rtNaN;
         //  初始化
-        // 'seekfmts1:40' F(1:min(3, length(y))) = y(1:min(3, length(y)));
+        // 'seekfmts1:42' F(1:min(3, length(y))) = y(1:min(3, length(y)));
         d = coder::internal::minimum2(3.0, static_cast<double>(yf.size(1)));
         if (1.0 > d) {
             loop_ub = 0;
@@ -154,9 +156,9 @@ void seekfmts1(const coder::array<double, 1U> &sig, double Nt, double fs,
             F[i1] = yf[i1];
         }
         //  输出最多三个
-        // 'seekfmts1:41' F = F(:);
+        // 'seekfmts1:43' F = F(:);
         //  按列输出
-        // 'seekfmts1:42' fmt(:, m) = F / (fs / 2);
+        // 'seekfmts1:44' fmt(:, m) = F / (fs / 2);
         fmt[3 * m] = F[0] / b_fs;
         fmt[3 * m + 1] = F[1] / b_fs;
         fmt[3 * m + 2] = F[2] / b_fs;

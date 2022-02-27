@@ -2,7 +2,7 @@
 // File: sum.h
 //
 // MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 00:06:11
+// C/C++ source code generated on  : 27-Feb-2022 11:31:05
 //
 
 #ifndef SUM_H
@@ -23,8 +23,6 @@ void sum(const ::coder::array<double, 2U> &x, double y[17]);
 void sum(const double x[4160], double y[32]);
 
 void sum(const ::coder::array<double, 2U> &x, ::coder::array<double, 2U> &y);
-
-double sum(const ::coder::array<double, 2U> &x);
 
 double sum(const ::coder::array<double, 1U> &x);
 

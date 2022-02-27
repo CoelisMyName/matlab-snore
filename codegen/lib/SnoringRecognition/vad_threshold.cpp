@@ -2,7 +2,7 @@
 // File: vad_threshold.cpp
 //
 // MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 00:06:11
+// C/C++ source code generated on  : 27-Feb-2022 11:31:05
 //
 
 // Include Files
@@ -17,11 +17,11 @@
 // function [dth] = vad_threshold(tis, sorted_sums, position)
 //
 // Arguments    : double tis
-//                const coder::array<double, 2U> &sorted_sums
+//                const coder::array<double, 1U> &sorted_sums
 //                double position
 // Return Type  : double
 //
-double vad_threshold(double tis, const coder::array<double, 2U> &sorted_sums,
+double vad_threshold(double tis, const coder::array<double, 1U> &sorted_sums,
                      double position)
 {
     double dth;

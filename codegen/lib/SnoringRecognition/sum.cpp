@@ -2,7 +2,7 @@
 // File: sum.cpp
 //
 // MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 00:06:11
+// C/C++ source code generated on  : 27-Feb-2022 11:31:05
 //
 
 // Include Files
@@ -81,15 +81,6 @@ void sum(const ::coder::array<double, 2U> &x, ::coder::array<double, 2U> &y)
             y[xi] = d;
         }
     }
-}
-
-//
-// Arguments    : const ::coder::array<double, 2U> &x
-// Return Type  : double
-//
-double sum(const ::coder::array<double, 2U> &x)
-{
-    return combineVectorElements(x);
 }
 
 //

@@ -1,19 +1,20 @@
 %% 按波形重新分段
 function [ostarts, oends] = vad_wave(array, starts, ends)
-    tstarts = zeros(1, length(starts), 'int64');
-    tends = zeros(1, length(ends), 'int64');
-    coder.varsize('tstarts');
-    coder.varsize('tends');
-    k = 1;
+    bufferHeight = min(length(starts), length(ends));
+    ostarts = zeros(bufferHeight, 1, 'int64');
+    oends = zeros(bufferHeight, 1, 'int64');
+    coder.varsize('ostarts');
+    coder.varsize('oends');
+    k = int64(1);
 
-    for i = 1:min(length(starts), length(ends))
+    for i = 1:bufferHeight
 
-        if (k > length(tends))
-            tends = [tends zeros(1, k, 'int64')];
-            tstarts = [tstarts zeros(1, k, 'int64')];
+        if (k > length(oends))
+            ostarts = [ostarts; zeros(k, 1, 'int64')];
+            oends = [oends; zeros(k, 1, 'int64')];
         end
 
-        tstarts(k) = starts(i);
+        ostarts(k) = starts(i);
         islow = 0;
         count = 0;
         lowb = int64(-1);
@@ -43,20 +44,20 @@ function [ostarts, oends] = vad_wave(array, starts, ends)
 
                     if (count >= 3)
 
-                        if (k > length(tends))
-                            tends = [tends zeros(1, k, 'int64')];
-                            tstarts = [tstarts zeros(1, k, 'int64')];
+                        if (k > length(oends))
+                            ostarts = [ostarts; zeros(k, 1, 'int64')];
+                            oends = [oends; zeros(k, 1, 'int64')];
                         end
 
-                        tends(k) = lowb;
+                        oends(k) = lowb;
                         k = k + 1;
 
-                        if (k > length(tends))
-                            tends = [tends zeros(1, k, 'int64')];
-                            tstarts = [tstarts zeros(1, k, 'int64')];
+                        if (k > length(oends))
+                            ostarts = [ostarts; zeros(k, 1, 'int64')];
+                            oends = [oends; zeros(k, 1, 'int64')];
                         end
 
-                        tstarts(k) = j - 1;
+                        ostarts(k) = j - 1;
                         islow = 0;
                         lowb = int64(-1);
                     end
@@ -68,16 +69,16 @@ function [ostarts, oends] = vad_wave(array, starts, ends)
 
         end
 
-        if (k > length(tends))
-            tends = [tends zeros(1, k, 'int64')];
-            tstarts = [tstarts zeros(1, k, 'int64')];
+        if (k > length(oends))
+            ostarts = [ostarts; zeros(k, 1, 'int64')];
+            oends = [oends; zeros(k, 1, 'int64')];
         end
 
-        tends(k) = ends(i);
+        oends(k) = ends(i);
         k = k + 1;
 
     end
 
-    ostarts = tstarts(1:k - 1)';
-    oends = tends(1:k - 1)';
+    ostarts = ostarts(1:k - 1);
+    oends = oends(1:k - 1);
 end

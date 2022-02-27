@@ -82,5 +82,5 @@ function [predict_label] = classifier(x, fs, w_starts, w_ends)
 
     feature = feature1(:, [3, 18, 19, 1, 46, 47, 53, 34, 50, 30, 31, 51, 33, 42, 54, 29, 28, 32, 53, 7, 52, 27, 36]);
     my_model = loadLearnerForCoder('compacted_model');
-    predict_label = predict(my_model, feature)';
+    predict_label = predict(my_model, feature);
 end

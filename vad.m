@@ -28,8 +28,6 @@ function [w_starts, w_ends] = vad(x, fs)
     %取阈值？
     dth = vad_threshold(tis, sorted_sums, position);
 
-    w_starts = int64([]);
-    w_ends = int64([]);
     coder.varsize('w_starts');
     coder.varsize('w_ends');
 
@@ -39,6 +37,9 @@ function [w_starts, w_ends] = vad(x, fs)
         % 映射至实际区间
         w_starts = (nx3 - 1) * 2500 + 1;
         w_ends = nx4 * 2500;
+    else
+        w_starts = zeros(0,1,'int64');
+        w_ends = zeros(0,1,'int64');
     end
 
     %截取段过滤

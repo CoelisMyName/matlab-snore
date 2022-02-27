@@ -8,12 +8,12 @@
       <param.BuildFolder>option.BuildFolder.Project</param.BuildFolder>
       <param.SpecifiedBuildFolder />
       <param.SearchPaths />
-      <param.ResponsivenessChecks>true</param.ResponsivenessChecks>
-      <param.ExtrinsicCalls>true</param.ExtrinsicCalls>
-      <param.IntegrityChecks>true</param.IntegrityChecks>
+      <param.ResponsivenessChecks />
+      <param.ExtrinsicCalls />
+      <param.IntegrityChecks />
       <param.SaturateOnIntegerOverflow>true</param.SaturateOnIntegerOverflow>
       <param.EnableAutoParallelization>false</param.EnableAutoParallelization>
-      <param.GlobalDataSyncMethod>option.GlobalDataSyncMethod.SyncAlways</param.GlobalDataSyncMethod>
+      <param.GlobalDataSyncMethod />
       <param.EnableVariableSizing>true</param.EnableVariableSizing>
       <param.DynamicMemoryAllocation>option.DynamicMemoryAllocation.Enabled</param.DynamicMemoryAllocation>
       <param.DynamicMemoryAllocationThreshold>2000000000</param.DynamicMemoryAllocationThreshold>
@@ -29,7 +29,7 @@
       <param.CodeFormattingTool>option.CodeFormattingTool.Auto</param.CodeFormattingTool>
       <param.ReservedNameArray />
       <param.CppStyleConst>false</param.CppStyleConst>
-      <param.EnableDebugging>false</param.EnableDebugging>
+      <param.EnableDebugging />
       <param.Verbosity>option.Verbosity.Verbose</param.Verbosity>
       <param.ReportPotentialDifferences>false</param.ReportPotentialDifferences>
       <param.GenerateReport>true</param.GenerateReport>
@@ -49,7 +49,7 @@
       <param.CustomSource />
       <param.CustomLibrary />
       <param.PostCodeGenCommand />
-      <param.mex.GenCodeOnly>false</param.mex.GenCodeOnly>
+      <param.mex.GenCodeOnly />
       <param.ConstantFoldingTimeout>40000</param.ConstantFoldingTimeout>
       <param.CompileTimeRecursionLimit>50</param.CompileTimeRecursionLimit>
       <param.EnableRuntimeRecursion>true</param.EnableRuntimeRecursion>
@@ -65,12 +65,12 @@
       <param.MemcpyThreshold>64</param.MemcpyThreshold>
       <param.EnableOpenMP>true</param.EnableOpenMP>
       <param.InitFltsAndDblsToZero>true</param.InitFltsAndDblsToZero>
-      <param.ConstantInputs>option.ConstantInputs.CheckValues</param.ConstantInputs>
+      <param.ConstantInputs />
       <param.EnableCRICodeCoverage>true</param.EnableCRICodeCoverage>
       <param.EnableAutoParallelizationReporting>true</param.EnableAutoParallelizationReporting>
       <param.EnableJIT>false</param.EnableJIT>
       <param.EnableJITSilentBailOut />
-      <param.CheckForIssuesJIT>true</param.CheckForIssuesJIT>
+      <param.CheckForIssuesJIT />
       <param.EnableGitSupport>false</param.EnableGitSupport>
       <param.EnableAutoCommit>false</param.EnableAutoCommit>
       <param.RepositoryStyle>option.RepositoryStyle.Auto</param.RepositoryStyle>
@@ -887,11 +887,11 @@
     <param.unifiedParamStorage />
     <var.gc.lastOutputRoot>codegen\lib\SnoringRecognition</var.gc.lastOutputRoot>
     <var.gc.lastOutputType>C_CODE</var.gc.lastOutputType>
-    <var.gc.preBuildChecksum>3536159253</var.gc.preBuildChecksum>
+    <var.gc.preBuildChecksum>2348701243</var.gc.preBuildChecksum>
     <var.cfi.lastOutputRoot />
     <var.cfi.preBuildChecksum />
     <var.outdatedOnRestore>false</var.outdatedOnRestore>
-    <var.lastUserSourceChecksum>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;&lt;checksum&gt;&lt;includedFiles&gt;&lt;file&gt;C:\repo\matlab\snore\amax_group.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\audspec.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\aweight.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\bark2hz.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\bark_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\BARKenergy.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\cep_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\classifier.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\CrestFactor.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\cweight.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\deltas.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\dolpc.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\enframe.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\FeatureTimeZeroCrossingRate.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\fft2barkmx.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\fft2melmx.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\fmt_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\formantfeature.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\frq2mel.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\GMM_score.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\gtcc_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\HENR.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\hz2bark.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\hz2mel.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\lifter.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\lmultigauss.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\lpc2cep.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\lpc2spec.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\LPCFeature.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\lsum.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\m_lpc.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\m_specgram.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\median_filter.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\mel2frq.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\mel2hz.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\melbankm.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\mfcc_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\mfcc_m.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\noise_segment.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\octbank.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\octdsgn.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\patient_classifier.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\pitch_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\postaud.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\powspec.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\PR800.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\pr800_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\rastafilt.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\rastaplp.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\se_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\seekfmts1.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\spec2cep.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\sum_group.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\vad.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\vad_below_threshold.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\vad_length_filter.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\vad_threshold.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\vad_wave.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\yuzhiSpeci.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\zweight.m&lt;/file&gt;&lt;/includedFiles&gt;&lt;value&gt;1554270550&lt;/value&gt;&lt;/checksum&gt;</var.lastUserSourceChecksum>
+    <var.lastUserSourceChecksum>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;&lt;checksum&gt;&lt;includedFiles&gt;&lt;file&gt;C:\repo\matlab\snore\amax_group.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\audspec.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\aweight.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\bark2hz.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\bark_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\BARKenergy.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\cep_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\classifier.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\CrestFactor.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\cweight.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\deltas.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\dolpc.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\enframe.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\FeatureTimeZeroCrossingRate.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\fft2barkmx.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\fft2melmx.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\fmt_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\formantfeature.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\frq2mel.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\GMM_score.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\gtcc_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\HENR.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\hz2bark.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\hz2mel.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\lifter.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\lmultigauss.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\lpc2cep.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\lpc2spec.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\LPCFeature.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\lsum.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\m_lpc.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\m_specgram.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\median_filter.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\mel2frq.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\mel2hz.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\melbankm.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\mfcc_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\mfcc_m.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\noise_segment.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\octbank.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\octdsgn.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\patient_classifier.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\pitch_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\postaud.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\powspec.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\PR800.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\pr800_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\rastafilt.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\rastaplp.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\se_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\seekfmts1.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\spec2cep.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\sum_group.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\vad.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\vad_below_threshold.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\vad_length_filter.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\vad_threshold.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\vad_wave.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\yuzhiSpeci.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\zweight.m&lt;/file&gt;&lt;/includedFiles&gt;&lt;value&gt;3412422256&lt;/value&gt;&lt;/checksum&gt;</var.lastUserSourceChecksum>
     <var.sourceSetState>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;&lt;sourceModel&gt;&lt;primarySourceFiles&gt;&lt;file&gt;C:\repo\matlab\snore\amax_group.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\audspec.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\aweight.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\bark2hz.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\bark_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\BARKenergy.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\cep_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\classifier.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\CrestFactor.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\cweight.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\deltas.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\dolpc.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\enframe.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\FeatureTimeZeroCrossingRate.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\fft2barkmx.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\fmt_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\formantfeature.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\frq2mel.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\GMM_score.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\gtcc_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\HENR.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\hz2bark.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\lifter.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\lmultigauss.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\lpc2cep.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\lpc2spec.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\LPCFeature.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\lsum.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\m_lpc.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\m_specgram.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\median_filter.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\mel2frq.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\melbankm.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\mfcc_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\mfcc_m.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\noise_segment.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\octbank.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\octdsgn.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\patient_classifier.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\pitch_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\postaud.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\powspec.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\PR800.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\pr800_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\rastaplp.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\se_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\seekfmts1.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\sum_group.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\vad.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\vad_below_threshold.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\vad_length_filter.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\vad_threshold.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\vad_wave.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\yuzhiSpeci.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\zweight.m&lt;/file&gt;&lt;/primarySourceFiles&gt;&lt;fixedPointSourceFiles/&gt;&lt;fixedPointSourceRegistered&gt;false&lt;/fixedPointSourceRegistered&gt;&lt;fixedPointSourceSelected&gt;false&lt;/fixedPointSourceSelected&gt;&lt;/sourceModel&gt;</var.sourceSetState>
     <param.forceMexBuild>false</param.forceMexBuild>
     <param.NoDefaultJIT>false</param.NoDefaultJIT>
@@ -930,8 +930,8 @@
     <param.deeplearning.EnableDeepLearning>false</param.deeplearning.EnableDeepLearning>
     <param.deeplearning.TargetLib>option.deeplearning.targetlibrary.none</param.deeplearning.TargetLib>
     <var.cfiTargetLibSuppression>false</var.cfiTargetLibSuppression>
-    <var.hasMatlabDeepLearningSupportPackage>true</var.hasMatlabDeepLearningSupportPackage>
-    <var.hasGpuDeepLearningSupportPackage>true</var.hasGpuDeepLearningSupportPackage>
+    <var.hasMatlabDeepLearningSupportPackage>false</var.hasMatlabDeepLearningSupportPackage>
+    <var.hasGpuDeepLearningSupportPackage>false</var.hasGpuDeepLearningSupportPackage>
     <param.tensorrt.DataType>option.tensorrt.datatype.fp32</param.tensorrt.DataType>
     <param.tensorrt.DataPath />
     <param.tensorrt.NumCalibrationBatches>0</param.tensorrt.NumCalibrationBatches>
@@ -1051,8 +1051,6 @@
       <param.deeplearning.EnableDeepLearning />
       <param.deeplearning.TargetLib />
       <var.cfiTargetLibSuppression />
-      <var.hasMatlabDeepLearningSupportPackage />
-      <var.hasGpuDeepLearningSupportPackage />
       <param.tensorrt.DataType />
       <param.tensorrt.DataPath />
       <param.tensorrt.NumCalibrationBatches />
@@ -1135,7 +1133,7 @@
         <Marker>1645871075004</Marker>
       </file>
       <file custom-data-expanded="false" value="${PROJECT_ROOT}\noise_segment.m">
-        <Marker>1645890603141</Marker>
+        <Marker>1645932428765</Marker>
       </file>
       <file custom-data-expanded="false" value="${PROJECT_ROOT}\patient_classifier.m">
         <Marker>1645871363905</Marker>
@@ -1358,8 +1356,8 @@
       </file>
       <file custom-data-expanded="false" value="${PROJECT_ROOT}\noise_segment.m">
         <Inputs fileName="noise_segment.m" functionName="noise_segment">
-          <Input Name="w_starts" typeId="0" />
-          <Input Name="w_ends" typeId="0" />
+          <Input Name="starts" typeId="0" />
+          <Input Name="ends" typeId="0" />
           <Input Name="fs" typeId="1" />
           <Input Name="min_gap" typeId="1" />
           <Input Name="margin" typeId="1" />
