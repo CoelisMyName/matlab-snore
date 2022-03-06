@@ -1,22 +1,9 @@
-//
-// File: CompactClassificationEnsemble.cpp
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
-// Include Files
 #include "CompactClassificationEnsemble.h"
 #include "aggregatePredict.h"
 #include "rt_nonfinite.h"
 #include "coder_array.h"
 #include "rt_nonfinite.h"
 
-// Function Definitions
-//
-// Arguments    : void
-// Return Type  : void
-//
 namespace coder {
 namespace classreg {
 namespace learning {
@@ -177,11 +164,6 @@ void CompactClassificationEnsemble::init()
     this->Cost[3] = 0.0;
 }
 
-//
-// Arguments    : const ::coder::array<double, 2U> &Xin
-//                ::coder::array<double, 1U> &labels
-// Return Type  : void
-//
 void CompactClassificationEnsemble::predict(
     const ::coder::array<double, 2U> &Xin,
     ::coder::array<double, 1U> &labels) const
@@ -297,9 +279,3 @@ void CompactClassificationEnsemble::predict(
 } // namespace learning
 } // namespace classreg
 } // namespace coder
-
-//
-// File trailer for CompactClassificationEnsemble.cpp
-//
-// [EOF]
-//

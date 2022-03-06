@@ -1,26 +1,9 @@
-//
-// File: designMelFilterBank.cpp
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
-// Include Files
 #include "designMelFilterBank.h"
 #include "rt_nonfinite.h"
 #include "coder_array.h"
 #include "rt_nonfinite.h"
 #include <math.h>
 
-// Function Definitions
-//
-// Arguments    : double fs
-//                const double bandEdges_data[]
-//                const int bandEdges_size[2]
-//                double NFFT
-//                ::coder::array<double, 2U> &filterBank
-// Return Type  : void
-//
 namespace coder {
 namespace audio {
 namespace internal {
@@ -162,9 +145,3 @@ void designMelFilterBank(double fs, const double bandEdges_data[],
 } // namespace internal
 } // namespace audio
 } // namespace coder
-
-//
-// File trailer for designMelFilterBank.cpp
-//
-// [EOF]
-//

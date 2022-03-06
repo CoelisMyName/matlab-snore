@@ -1,43 +1,9 @@
-//
-// File: combineVectorElements.cpp
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
-// Include Files
 #include "combineVectorElements.h"
 #include "rt_nonfinite.h"
 #include "coder_array.h"
 #include <string.h>
 
-// Function Definitions
-//
-// Arguments    : const ::coder::array<boolean_T, 2U> &x
-// Return Type  : int
-//
 namespace coder {
-int b_combineVectorElements(const ::coder::array<boolean_T, 2U> &x)
-{
-    int vlen;
-    int y;
-    vlen = x.size(1);
-    if (x.size(1) == 0) {
-        y = 0;
-    } else {
-        y = x[0];
-        for (int k = 2; k <= vlen; k++) {
-            y += x[k - 1];
-        }
-    }
-    return y;
-}
-
-//
-// Arguments    : const ::coder::array<double, 2U> &x
-//                double y[17]
-// Return Type  : void
-//
 void combineVectorElements(const ::coder::array<double, 2U> &x, double y[17])
 {
     if (x.size(0) == 0) {
@@ -88,11 +54,6 @@ void combineVectorElements(const ::coder::array<double, 2U> &x, double y[17])
     }
 }
 
-//
-// Arguments    : const ::coder::array<double, 2U> &x
-//                ::coder::array<double, 2U> &y
-// Return Type  : void
-//
 void combineVectorElements(const ::coder::array<double, 2U> &x,
                            ::coder::array<double, 2U> &y)
 {
@@ -154,9 +115,3 @@ void combineVectorElements(const ::coder::array<double, 2U> &x,
 }
 
 } // namespace coder
-
-//
-// File trailer for combineVectorElements.cpp
-//
-// [EOF]
-//

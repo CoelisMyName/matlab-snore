@@ -1,11 +1,3 @@
-//
-// File: eig.cpp
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
-// Include Files
 #include "eig.h"
 #include "SnoringRecognition_rtwutil.h"
 #include "eigStandard.h"
@@ -16,15 +8,8 @@
 #include <math.h>
 #include <string.h>
 
-// Function Declarations
 static int div_nde_s32_floor(int numerator, int denominator);
 
-// Function Definitions
-//
-// Arguments    : int numerator
-//                int denominator
-// Return Type  : int
-//
 static int div_nde_s32_floor(int numerator, int denominator)
 {
     int b_numerator;
@@ -37,11 +22,6 @@ static int div_nde_s32_floor(int numerator, int denominator)
     return numerator / denominator + b_numerator;
 }
 
-//
-// Arguments    : const double A[36]
-//                creal_T V[6]
-// Return Type  : void
-//
 namespace coder {
 void eig(const double A[36], creal_T V[6])
 {
@@ -332,9 +312,3 @@ void eig(const double A[36], creal_T V[6])
 }
 
 } // namespace coder
-
-//
-// File trailer for eig.cpp
-//
-// [EOF]
-//

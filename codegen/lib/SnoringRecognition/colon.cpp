@@ -1,24 +1,9 @@
-//
-// File: colon.cpp
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
-// Include Files
 #include "colon.h"
 #include "rt_nonfinite.h"
 #include "coder_array.h"
 #include "rt_nonfinite.h"
 #include <math.h>
 
-// Function Definitions
-//
-// Arguments    : double a
-//                double b
-//                ::coder::array<double, 2U> &y
-// Return Type  : void
-//
 namespace coder {
 void eml_float_colon(double a, double b, ::coder::array<double, 2U> &y)
 {
@@ -71,9 +56,3 @@ void eml_float_colon(double a, double b, ::coder::array<double, 2U> &y)
 }
 
 } // namespace coder
-
-//
-// File trailer for colon.cpp
-//
-// [EOF]
-//

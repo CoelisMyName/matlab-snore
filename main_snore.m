@@ -1,7 +1,7 @@
 % 读取音频数据
 [x, fs] = audioread('0001.wav');
 % [x, fs] = audioread('20131025刘俊光1min降噪.wav');
-xn = x';
+xn = x;
 n_start = 0;
 n_length = 1;
 % libsox 降噪
@@ -17,4 +17,4 @@ if n_start >= 0
 end
 
 % 模型分类
-predict_label = classifier(xn, w_starts, w_ends, fs);
+predict_label = classifier(xn, fs, w_starts, w_ends);

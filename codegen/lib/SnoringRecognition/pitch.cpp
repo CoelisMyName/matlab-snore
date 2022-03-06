@@ -1,23 +1,9 @@
-//
-// File: pitch.cpp
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
-// Include Files
 #include "pitch.h"
 #include "NCF.h"
 #include "rt_nonfinite.h"
 #include "coder_array.h"
 #include <math.h>
 
-// Function Definitions
-//
-// Arguments    : const ::coder::array<double, 1U> &x
-//                ::coder::array<double, 1U> &f0
-// Return Type  : void
-//
 namespace coder {
 void b_pitch(const ::coder::array<double, 1U> &x,
              ::coder::array<double, 1U> &f0)
@@ -77,11 +63,6 @@ void b_pitch(const ::coder::array<double, 1U> &x,
     f0.set_size(r + 1);
 }
 
-//
-// Arguments    : const ::coder::array<double, 1U> &x
-//                ::coder::array<double, 1U> &f0
-// Return Type  : void
-//
 void c_pitch(const ::coder::array<double, 1U> &x,
              ::coder::array<double, 1U> &f0)
 {
@@ -140,11 +121,6 @@ void c_pitch(const ::coder::array<double, 1U> &x,
     f0.set_size(r + 1);
 }
 
-//
-// Arguments    : const ::coder::array<double, 1U> &x
-//                ::coder::array<double, 1U> &f0
-// Return Type  : void
-//
 void d_pitch(const ::coder::array<double, 1U> &x,
              ::coder::array<double, 1U> &f0)
 {
@@ -203,11 +179,6 @@ void d_pitch(const ::coder::array<double, 1U> &x,
     f0.set_size(r + 1);
 }
 
-//
-// Arguments    : const ::coder::array<double, 1U> &x
-//                ::coder::array<double, 1U> &f0
-// Return Type  : void
-//
 void e_pitch(const ::coder::array<double, 1U> &x,
              ::coder::array<double, 1U> &f0)
 {
@@ -266,11 +237,6 @@ void e_pitch(const ::coder::array<double, 1U> &x,
     f0.set_size(r + 1);
 }
 
-//
-// Arguments    : const ::coder::array<double, 1U> &x
-//                ::coder::array<double, 1U> &f0
-// Return Type  : void
-//
 void f_pitch(const ::coder::array<double, 1U> &x,
              ::coder::array<double, 1U> &f0)
 {
@@ -329,11 +295,6 @@ void f_pitch(const ::coder::array<double, 1U> &x,
     f0.set_size(r + 1);
 }
 
-//
-// Arguments    : const ::coder::array<double, 1U> &x
-//                ::coder::array<double, 1U> &f0
-// Return Type  : void
-//
 void g_pitch(const ::coder::array<double, 1U> &x,
              ::coder::array<double, 1U> &f0)
 {
@@ -392,11 +353,6 @@ void g_pitch(const ::coder::array<double, 1U> &x,
     f0.set_size(r + 1);
 }
 
-//
-// Arguments    : const ::coder::array<double, 1U> &x
-//                ::coder::array<double, 1U> &f0
-// Return Type  : void
-//
 void pitch(const ::coder::array<double, 1U> &x, ::coder::array<double, 1U> &f0)
 {
     array<double, 2U> y;
@@ -455,9 +411,3 @@ void pitch(const ::coder::array<double, 1U> &x, ::coder::array<double, 1U> &f0)
 }
 
 } // namespace coder
-
-//
-// File trailer for pitch.cpp
-//
-// [EOF]
-//

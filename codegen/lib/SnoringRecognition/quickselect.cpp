@@ -1,15 +1,6 @@
-//
-// File: quickselect.cpp
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
-// Include Files
 #include "quickselect.h"
 #include "rt_nonfinite.h"
 
-// Function Declarations
 namespace coder {
 namespace internal {
 static int thirdOfFive(const double v[10], int ia, int ib);
@@ -17,13 +8,6 @@ static int thirdOfFive(const double v[10], int ia, int ib);
 }
 } // namespace coder
 
-// Function Definitions
-//
-// Arguments    : const double v[10]
-//                int ia
-//                int ib
-// Return Type  : int
-//
 namespace coder {
 namespace internal {
 static int thirdOfFive(const double v[10], int ia, int ib)
@@ -117,15 +101,6 @@ static int thirdOfFive(const double v[10], int ia, int ib)
     return im;
 }
 
-//
-// Arguments    : double v[10]
-//                int n
-//                int vlen
-//                double *vn
-//                int *nfirst
-//                int *nlast
-// Return Type  : void
-//
 void quickselect(double v[10], int n, int vlen, double *vn, int *nfirst,
                  int *nlast)
 {
@@ -257,9 +232,3 @@ void quickselect(double v[10], int n, int vlen, double *vn, int *nfirst,
 
 } // namespace internal
 } // namespace coder
-
-//
-// File trailer for quickselect.cpp
-//
-// [EOF]
-//

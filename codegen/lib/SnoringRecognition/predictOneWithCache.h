@@ -1,20 +1,11 @@
-//
-// File: predictOneWithCache.h
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
 #ifndef PREDICTONEWITHCACHE_H
 #define PREDICTONEWITHCACHE_H
 
-// Include Files
 #include "rtwtypes.h"
 #include "coder_array.h"
 #include <cstddef>
 #include <cstdlib>
 
-// Type Declarations
 namespace coder {
 namespace classreg {
 namespace learning {
@@ -26,7 +17,6 @@ class CompactClassificationTree;
 } // namespace classreg
 } // namespace coder
 
-// Function Declarations
 namespace coder {
 namespace classreg {
 namespace learning {
@@ -49,8 +39,3 @@ void predictOneWithCache(
 } // namespace coder
 
 #endif
-//
-// File trailer for predictOneWithCache.h
-//
-// [EOF]
-//

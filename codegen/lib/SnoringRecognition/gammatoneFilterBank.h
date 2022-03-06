@@ -1,20 +1,11 @@
-//
-// File: gammatoneFilterBank.h
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
 #ifndef GAMMATONEFILTERBANK_H
 #define GAMMATONEFILTERBANK_H
 
-// Include Files
 #include "rtwtypes.h"
 #include "coder_array.h"
 #include <cstddef>
 #include <cstdlib>
 
-// Type Definitions
 struct cell_wrap_68 {
     unsigned int f1[8];
 };
@@ -152,8 +143,3 @@ class f_gammatoneFilterBank {
 } // namespace coder
 
 #endif
-//
-// File trailer for gammatoneFilterBank.h
-//
-// [EOF]
-//

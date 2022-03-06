@@ -1,35 +1,10 @@
-//
-// File: sqrt.cpp
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
-// Include Files
 #include "sqrt.h"
 #include "SnoringRecognition_rtwutil.h"
 #include "rt_nonfinite.h"
 #include "rt_nonfinite.h"
 #include <math.h>
 
-// Function Definitions
-//
-// Arguments    : double x_data[]
-//                const int *x_size
-// Return Type  : void
-//
 namespace coder {
-void b_sqrt(double x_data[], const int *x_size)
-{
-    for (int k = 0; k < *x_size; k++) {
-        x_data[k] = sqrt(x_data[k]);
-    }
-}
-
-//
-// Arguments    : creal_T *x
-// Return Type  : void
-//
 void b_sqrt(creal_T *x)
 {
     double absxi;
@@ -101,9 +76,3 @@ void b_sqrt(creal_T *x)
 }
 
 } // namespace coder
-
-//
-// File trailer for sqrt.cpp
-//
-// [EOF]
-//

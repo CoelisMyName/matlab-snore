@@ -1,11 +1,3 @@
-//
-// File: sort.cpp
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
-// Include Files
 #include "sort.h"
 #include "rt_nonfinite.h"
 #include "sortIdx.h"
@@ -13,12 +5,6 @@
 #include "rt_nonfinite.h"
 #include <string.h>
 
-// Function Definitions
-//
-// Arguments    : ::coder::array<double, 2U> &x
-//                ::coder::array<int, 2U> &idx
-// Return Type  : void
-//
 namespace coder {
 namespace internal {
 void sort(::coder::array<double, 2U> &x, ::coder::array<int, 2U> &idx)
@@ -26,10 +12,6 @@ void sort(::coder::array<double, 2U> &x, ::coder::array<int, 2U> &idx)
     sortIdx(x, idx);
 }
 
-//
-// Arguments    : ::coder::array<double, 2U> &x
-// Return Type  : void
-//
 void sort(::coder::array<double, 2U> &x)
 {
     array<int, 2U> idx;
@@ -245,10 +227,6 @@ void sort(::coder::array<double, 2U> &x)
     }
 }
 
-//
-// Arguments    : double x[200]
-// Return Type  : void
-//
 void sort(double x[200])
 {
     double xwork[200];
@@ -443,10 +421,6 @@ void sort(double x[200])
     }
 }
 
-//
-// Arguments    : ::coder::array<double, 1U> &x
-// Return Type  : void
-//
 void sort(::coder::array<double, 1U> &x)
 {
     array<double, 1U> b_xwork;
@@ -748,11 +722,6 @@ void sort(::coder::array<double, 1U> &x)
     }
 }
 
-//
-// Arguments    : double x_data[]
-//                int x_size[2]
-// Return Type  : void
-//
 void sort(double x_data[], int x_size[2])
 {
     array<double, 2U> x;
@@ -775,9 +744,3 @@ void sort(double x_data[], int x_size[2])
 
 } // namespace internal
 } // namespace coder
-
-//
-// File trailer for sort.cpp
-//
-// [EOF]
-//

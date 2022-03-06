@@ -1,11 +1,3 @@
-//
-// File: xdhseqr.cpp
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
-// Include Files
 #include "xdhseqr.h"
 #include "rt_nonfinite.h"
 #include "xdlanv2.h"
@@ -13,12 +5,6 @@
 #include "rt_nonfinite.h"
 #include <math.h>
 
-// Function Definitions
-//
-// Arguments    : double h_data[]
-//                const int h_size[2]
-// Return Type  : int
-//
 namespace coder {
 namespace internal {
 namespace reflapack {
@@ -355,9 +341,3 @@ int eml_dlahqr(double h_data[], const int h_size[2])
 } // namespace reflapack
 } // namespace internal
 } // namespace coder
-
-//
-// File trailer for xdhseqr.cpp
-//
-// [EOF]
-//

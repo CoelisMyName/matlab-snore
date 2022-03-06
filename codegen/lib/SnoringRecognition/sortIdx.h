@@ -1,20 +1,11 @@
-//
-// File: sortIdx.h
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
 #ifndef SORTIDX_H
 #define SORTIDX_H
 
-// Include Files
 #include "rtwtypes.h"
 #include "coder_array.h"
 #include <cstddef>
 #include <cstdlib>
 
-// Function Declarations
 namespace coder {
 namespace internal {
 void b_merge(int idx[200], double x[200], int offset, int np, int nq,
@@ -34,8 +25,3 @@ void sortIdx(::coder::array<double, 2U> &x, ::coder::array<int, 2U> &idx);
 } // namespace coder
 
 #endif
-//
-// File trailer for sortIdx.h
-//
-// [EOF]
-//

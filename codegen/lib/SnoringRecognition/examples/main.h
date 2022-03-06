@@ -1,10 +1,3 @@
-//
-// File: main.h
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
 /*************************************************************************/
 /* This automatically generated example C++ main file shows how to call  */
 /* entry-point functions that MATLAB Coder generated. You must customize */
@@ -33,17 +26,10 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-// Include Files
 #include "rtwtypes.h"
 #include <cstddef>
 #include <cstdlib>
 
-// Function Declarations
 extern int main(int argc, char **argv);
 
 #endif
-//
-// File trailer for main.h
-//
-// [EOF]
-//

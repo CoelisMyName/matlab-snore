@@ -1,11 +1,3 @@
-//
-// File: sparse.cpp
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
-// Include Files
 #include "sparse.h"
 #include "anonymous_function.h"
 #include "introsort.h"
@@ -13,15 +5,6 @@
 #include "sparse1.h"
 #include "coder_array.h"
 
-// Function Definitions
-//
-// Arguments    : const ::coder::array<double, 2U> &varargin_1
-//                const ::coder::array<double, 2U> &varargin_2
-//                const ::coder::array<double, 2U> &varargin_3
-//                double varargin_5
-//                sparse *y
-// Return Type  : void
-//
 namespace coder {
 void b_sparse(const ::coder::array<double, 2U> &varargin_1,
               const ::coder::array<double, 2U> &varargin_2,
@@ -128,9 +111,3 @@ void b_sparse(const ::coder::array<double, 2U> &varargin_1,
 }
 
 } // namespace coder
-
-//
-// File trailer for sparse.cpp
-//
-// [EOF]
-//

@@ -1,21 +1,8 @@
-//
-// File: nanmean.cpp
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
-// Include Files
 #include "nanmean.h"
 #include "rt_nonfinite.h"
 #include "coder_array.h"
 #include "rt_nonfinite.h"
 
-// Function Definitions
-//
-// Arguments    : const ::coder::array<double, 2U> &varargin_1
-// Return Type  : double
-//
 namespace coder {
 double nanmean(const ::coder::array<double, 2U> &varargin_1)
 {
@@ -46,9 +33,3 @@ double nanmean(const ::coder::array<double, 2U> &varargin_1)
 }
 
 } // namespace coder
-
-//
-// File trailer for nanmean.cpp
-//
-// [EOF]
-//

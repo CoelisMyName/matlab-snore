@@ -1,11 +1,3 @@
-//
-// File: eigStandard.cpp
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
-// Include Files
 #include "eigStandard.h"
 #include "SnoringRecognition_data.h"
 #include "SnoringRecognition_rtwutil.h"
@@ -15,12 +7,6 @@
 #include "rt_nonfinite.h"
 #include <math.h>
 
-// Function Definitions
-//
-// Arguments    : const double A[36]
-//                creal_T V[6]
-// Return Type  : void
-//
 namespace coder {
 void eigStandard(const double A[36], creal_T V[6])
 {
@@ -378,9 +364,3 @@ void eigStandard(const double A[36], creal_T V[6])
 }
 
 } // namespace coder
-
-//
-// File trailer for eigStandard.cpp
-//
-// [EOF]
-//

@@ -1,24 +1,8 @@
-//
-// File: xzlartg.cpp
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
-// Include Files
 #include "xzlartg.h"
 #include "SnoringRecognition_rtwutil.h"
 #include "rt_nonfinite.h"
 #include <math.h>
 
-// Function Definitions
-//
-// Arguments    : const creal_T f
-//                const creal_T g
-//                double *cs
-//                creal_T *sn
-// Return Type  : void
-//
 namespace coder {
 namespace internal {
 namespace reflapack {
@@ -124,14 +108,6 @@ void xzlartg(const creal_T f, const creal_T g, double *cs, creal_T *sn)
     }
 }
 
-//
-// Arguments    : const creal_T f
-//                const creal_T g
-//                double *cs
-//                creal_T *sn
-//                creal_T *r
-// Return Type  : void
-//
 void xzlartg(const creal_T f, const creal_T g, double *cs, creal_T *sn,
              creal_T *r)
 {
@@ -264,9 +240,3 @@ void xzlartg(const creal_T f, const creal_T g, double *cs, creal_T *sn,
 } // namespace reflapack
 } // namespace internal
 } // namespace coder
-
-//
-// File trailer for xzlartg.cpp
-//
-// [EOF]
-//

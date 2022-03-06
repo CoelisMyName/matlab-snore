@@ -1,11 +1,3 @@
-//
-// File: spectralEntropy.cpp
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
-// Include Files
 #include "spectralEntropy.h"
 #include "log2.h"
 #include "rt_nonfinite.h"
@@ -13,12 +5,6 @@
 #include "coder_array.h"
 #include "rt_nonfinite.h"
 
-// Function Definitions
-//
-// Arguments    : const ::coder::array<double, 1U> &x
-//                ::coder::array<double, 1U> &entropy
-// Return Type  : void
-//
 namespace coder {
 void b_spectralEntropy(const ::coder::array<double, 1U> &x,
                        ::coder::array<double, 1U> &entropy)
@@ -103,11 +89,6 @@ void b_spectralEntropy(const ::coder::array<double, 1U> &x,
     }
 }
 
-//
-// Arguments    : const ::coder::array<double, 1U> &x
-//                ::coder::array<double, 1U> &entropy
-// Return Type  : void
-//
 void c_spectralEntropy(const ::coder::array<double, 1U> &x,
                        ::coder::array<double, 1U> &entropy)
 {
@@ -191,11 +172,6 @@ void c_spectralEntropy(const ::coder::array<double, 1U> &x,
     }
 }
 
-//
-// Arguments    : const ::coder::array<double, 1U> &x
-//                ::coder::array<double, 1U> &entropy
-// Return Type  : void
-//
 void d_spectralEntropy(const ::coder::array<double, 1U> &x,
                        ::coder::array<double, 1U> &entropy)
 {
@@ -279,11 +255,6 @@ void d_spectralEntropy(const ::coder::array<double, 1U> &x,
     }
 }
 
-//
-// Arguments    : const ::coder::array<double, 1U> &x
-//                ::coder::array<double, 1U> &entropy
-// Return Type  : void
-//
 void e_spectralEntropy(const ::coder::array<double, 1U> &x,
                        ::coder::array<double, 1U> &entropy)
 {
@@ -367,11 +338,6 @@ void e_spectralEntropy(const ::coder::array<double, 1U> &x,
     }
 }
 
-//
-// Arguments    : const ::coder::array<double, 1U> &x
-//                ::coder::array<double, 1U> &entropy
-// Return Type  : void
-//
 void f_spectralEntropy(const ::coder::array<double, 1U> &x,
                        ::coder::array<double, 1U> &entropy)
 {
@@ -455,11 +421,6 @@ void f_spectralEntropy(const ::coder::array<double, 1U> &x,
     }
 }
 
-//
-// Arguments    : const ::coder::array<double, 1U> &x
-//                ::coder::array<double, 1U> &entropy
-// Return Type  : void
-//
 void g_spectralEntropy(const ::coder::array<double, 1U> &x,
                        ::coder::array<double, 1U> &entropy)
 {
@@ -543,11 +504,6 @@ void g_spectralEntropy(const ::coder::array<double, 1U> &x,
     }
 }
 
-//
-// Arguments    : const ::coder::array<double, 1U> &x
-//                ::coder::array<double, 1U> &entropy
-// Return Type  : void
-//
 void spectralEntropy(const ::coder::array<double, 1U> &x,
                      ::coder::array<double, 1U> &entropy)
 {
@@ -632,9 +588,3 @@ void spectralEntropy(const ::coder::array<double, 1U> &x,
 }
 
 } // namespace coder
-
-//
-// File trailer for spectralEntropy.cpp
-//
-// [EOF]
-//

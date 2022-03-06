@@ -1,11 +1,3 @@
-//
-// File: hist.cpp
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
-// Include Files
 #include "hist.h"
 #include "rt_nonfinite.h"
 #include "coder_array.h"
@@ -13,13 +5,6 @@
 #include <math.h>
 #include <string.h>
 
-// Function Definitions
-//
-// Arguments    : const ::coder::array<double, 1U> &Y
-//                double no[200]
-//                double xo[200]
-// Return Type  : void
-//
 namespace coder {
 void hist(const ::coder::array<double, 1U> &Y, double no[200], double xo[200])
 {
@@ -147,9 +132,3 @@ void hist(const ::coder::array<double, 1U> &Y, double no[200], double xo[200])
 }
 
 } // namespace coder
-
-//
-// File trailer for hist.cpp
-//
-// [EOF]
-//

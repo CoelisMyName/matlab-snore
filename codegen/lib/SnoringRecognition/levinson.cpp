@@ -1,56 +1,9 @@
-//
-// File: levinson.cpp
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
-// Include Files
 #include "levinson.h"
-#include "callLevinson.h"
 #include "rt_nonfinite.h"
 #include "coder_array.h"
 #include <string.h>
 
-// Function Definitions
-//
-// Arguments    : const ::coder::array<creal_T, 1U> &R
-//                creal_T A_data[]
-//                int A_size[2]
-//                double E_data[]
-//                int E_size[2]
-// Return Type  : void
-//
 namespace coder {
-void b_levinson(const ::coder::array<creal_T, 1U> &R, creal_T A_data[],
-                int A_size[2], double E_data[], int E_size[2])
-{
-    creal_T K_data[13];
-    creal_T b_A_data[13];
-    int K_size[2];
-    int b_A_size[2];
-    int N;
-    N = 10;
-    if ((10 == R.size(0)) || (10 > R.size(0))) {
-        N = R.size(0) - 1;
-    }
-    signal::internal::levinson::callLevinson(R, static_cast<double>(N),
-                                             b_A_data, b_A_size, E_data, E_size,
-                                             K_data, K_size);
-    A_size[0] = 1;
-    A_size[1] = b_A_size[1];
-    N = b_A_size[1];
-    if (0 <= N - 1) {
-        memcpy(&A_data[0], &b_A_data[0], N * sizeof(creal_T));
-    }
-}
-
-//
-// Arguments    : const ::coder::array<double, 2U> &R
-//                ::coder::array<double, 2U> &A
-//                ::coder::array<double, 1U> &E
-// Return Type  : void
-//
 void levinson(const ::coder::array<double, 2U> &R,
               ::coder::array<double, 2U> &A, ::coder::array<double, 1U> &E)
 {
@@ -151,33 +104,4 @@ void levinson(const ::coder::array<double, 2U> &R,
     }
 }
 
-//
-// Arguments    : const ::coder::array<creal_T, 1U> &R
-//                creal_T A_data[]
-//                int A_size[2]
-//                double E_data[]
-//                int E_size[2]
-// Return Type  : void
-//
-void levinson(const ::coder::array<creal_T, 1U> &R, creal_T A_data[],
-              int A_size[2], double E_data[], int E_size[2])
-{
-    creal_T K_data[13];
-    int K_size[2];
-    int N;
-    N = 12;
-    if ((12 == R.size(0)) || (12 > R.size(0))) {
-        N = R.size(0) - 1;
-    }
-    signal::internal::levinson::callLevinson(R, static_cast<double>(N), A_data,
-                                             A_size, E_data, E_size, K_data,
-                                             K_size);
-}
-
 } // namespace coder
-
-//
-// File trailer for levinson.cpp
-//
-// [EOF]
-//

@@ -3,15 +3,15 @@
 function [w_starts, w_ends] = vad(x, fs)
 
     %% -------------------音频最小长度60秒---------------------------
-    MIN_LEN = 60 * fs;
+    %MIN_LEN = 60 * fs;
 
-    if (length(x) > MIN_LEN)
-        x = x(1:MIN_LEN);
-    end
+    %if (length(x) > MIN_LEN)
+        %x = x(1:MIN_LEN);
+    %end
 
-    if (length(x) < MIN_LEN)
-        x = [x; zeros(MIN_LEN - length(x), 1)];
-    end
+    %if (length(x) < MIN_LEN)
+        %x = [x; zeros(MIN_LEN - length(x), 1)];
+    %end
 
     maxs = amax_group(x, 50);
     sums = sum_group(maxs, 50);

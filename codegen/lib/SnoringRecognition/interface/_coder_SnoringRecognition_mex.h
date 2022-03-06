@@ -1,19 +1,10 @@
-//
-// File: _coder_SnoringRecognition_mex.h
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
 #ifndef _CODER_SNORINGRECOGNITION_MEX_H
 #define _CODER_SNORINGRECOGNITION_MEX_H
 
-// Include Files
 #include "emlrt.h"
 #include "mex.h"
 #include "tmwtypes.h"
 
-// Function Declarations
 MEXFUNCTION_LINKAGE void mexFunction(int32_T nlhs, mxArray *plhs[],
                                      int32_T nrhs, const mxArray *prhs[]);
 
@@ -66,8 +57,3 @@ void unsafe_zweight_mexFunction(int32_T nlhs, mxArray *plhs[3], int32_T nrhs,
                                 const mxArray *prhs[1]);
 
 #endif
-//
-// File trailer for _coder_SnoringRecognition_mex.h
-//
-// [EOF]
-//

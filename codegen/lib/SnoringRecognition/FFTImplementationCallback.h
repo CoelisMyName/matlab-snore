@@ -1,20 +1,11 @@
-//
-// File: FFTImplementationCallback.h
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
 #ifndef FFTIMPLEMENTATIONCALLBACK_H
 #define FFTIMPLEMENTATIONCALLBACK_H
 
-// Include Files
 #include "rtwtypes.h"
 #include "coder_array.h"
 #include <cstddef>
 #include <cstdlib>
 
-// Type Definitions
 namespace coder {
 namespace internal {
 class FFTImplementationCallback {
@@ -196,8 +187,3 @@ class FFTImplementationCallback {
 } // namespace coder
 
 #endif
-//
-// File trailer for FFTImplementationCallback.h
-//
-// [EOF]
-//

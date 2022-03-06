@@ -1,11 +1,3 @@
-//
-// File: eigHermitianStandard.cpp
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
-// Include Files
 #include "eigHermitianStandard.h"
 #include "SnoringRecognition_data.h"
 #include "SnoringRecognition_rtwutil.h"
@@ -19,14 +11,6 @@
 #include <math.h>
 #include <string.h>
 
-// Function Definitions
-//
-// Arguments    : const creal_T A_data[]
-//                const int A_size[2]
-//                creal_T V_data[]
-//                int *V_size
-// Return Type  : void
-//
 namespace coder {
 void eigHermitianStandard(const creal_T A_data[], const int A_size[2],
                           creal_T V_data[], int *V_size)
@@ -419,13 +403,6 @@ void eigHermitianStandard(const creal_T A_data[], const int A_size[2],
     }
 }
 
-//
-// Arguments    : const double A_data[]
-//                const int A_size[2]
-//                double V_data[]
-//                int *V_size
-// Return Type  : void
-//
 void eigHermitianStandard(const double A_data[], const int A_size[2],
                           double V_data[], int *V_size)
 {
@@ -721,9 +698,3 @@ void eigHermitianStandard(const double A_data[], const int A_size[2],
 }
 
 } // namespace coder
-
-//
-// File trailer for eigHermitianStandard.cpp
-//
-// [EOF]
-//

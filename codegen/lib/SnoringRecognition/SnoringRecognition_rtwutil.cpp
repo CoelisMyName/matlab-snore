@@ -1,23 +1,9 @@
-//
-// File: SnoringRecognition_rtwutil.cpp
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
-// Include Files
 #include "SnoringRecognition_rtwutil.h"
 #include "rt_nonfinite.h"
 #include "rt_defines.h"
 #include "rt_nonfinite.h"
 #include <math.h>
 
-// Function Definitions
-//
-// Arguments    : int numerator
-//                int denominator
-// Return Type  : int
-//
 int div_s32_floor(int numerator, int denominator)
 {
     int quotient;
@@ -57,11 +43,6 @@ int div_s32_floor(int numerator, int denominator)
     return quotient;
 }
 
-//
-// Arguments    : double u0
-//                double u1
-// Return Type  : double
-//
 double rt_atan2d_snf(double u0, double u1)
 {
     double y;
@@ -95,11 +76,6 @@ double rt_atan2d_snf(double u0, double u1)
     return y;
 }
 
-//
-// Arguments    : double u0
-//                double u1
-// Return Type  : double
-//
 double rt_hypotd_snf(double u0, double u1)
 {
     double a;
@@ -118,11 +94,6 @@ double rt_hypotd_snf(double u0, double u1)
     return y;
 }
 
-//
-// Arguments    : double u0
-//                double u1
-// Return Type  : double
-//
 double rt_powd_snf(double u0, double u1)
 {
     double y;
@@ -168,10 +139,6 @@ double rt_powd_snf(double u0, double u1)
     return y;
 }
 
-//
-// Arguments    : double u
-// Return Type  : double
-//
 double rt_roundd_snf(double u)
 {
     double y;
@@ -188,9 +155,3 @@ double rt_roundd_snf(double u)
     }
     return y;
 }
-
-//
-// File trailer for SnoringRecognition_rtwutil.cpp
-//
-// [EOF]
-//

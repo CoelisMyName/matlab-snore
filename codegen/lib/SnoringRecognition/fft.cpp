@@ -1,55 +1,10 @@
-//
-// File: fft.cpp
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
-// Include Files
 #include "fft.h"
 #include "FFTImplementationCallback.h"
 #include "rt_nonfinite.h"
 #include "coder_array.h"
 
-// Function Definitions
-//
-// Arguments    : const ::coder::array<double, 2U> &x
-//                ::coder::array<creal_T, 2U> &y
-// Return Type  : void
-//
 namespace coder {
 void b_fft(const ::coder::array<double, 2U> &x, ::coder::array<creal_T, 2U> &y)
-{
-    if (x.size(1) == 0) {
-        y.set_size(1024, 0);
-    } else {
-        int i;
-        int loop_ub;
-        int nChan;
-        nChan = x.size(1);
-        y.set_size(1024, x.size(1));
-        loop_ub = 1024 * x.size(1);
-        for (i = 0; i < loop_ub; i++) {
-            y[i].re = 0.0;
-            y[i].im = 0.0;
-        }
-        for (loop_ub = 0; loop_ub < nChan; loop_ub++) {
-            for (i = 0; i < 1024; i++) {
-                y[i + 1024 * loop_ub].re = 0.0;
-                y[i + 1024 * loop_ub].im = 0.0;
-            }
-            internal::FFTImplementationCallback::doHalfLengthRadix2(
-                x, loop_ub * 400, *(creal_T(*)[1024]) & y[1024 * loop_ub]);
-        }
-    }
-}
-
-//
-// Arguments    : const ::coder::array<double, 2U> &x
-//                ::coder::array<creal_T, 2U> &y
-// Return Type  : void
-//
-void c_fft(const ::coder::array<double, 2U> &x, ::coder::array<creal_T, 2U> &y)
 {
     if (x.size(1) == 0) {
         y.set_size(2048, 0);
@@ -75,12 +30,7 @@ void c_fft(const ::coder::array<double, 2U> &x, ::coder::array<creal_T, 2U> &y)
     }
 }
 
-//
-// Arguments    : const ::coder::array<double, 2U> &x
-//                ::coder::array<creal_T, 2U> &y
-// Return Type  : void
-//
-void d_fft(const ::coder::array<double, 2U> &x, ::coder::array<creal_T, 2U> &y)
+void c_fft(const ::coder::array<double, 2U> &x, ::coder::array<creal_T, 2U> &y)
 {
     if (x.size(1) == 0) {
         y.set_size(2048, 0);
@@ -106,12 +56,7 @@ void d_fft(const ::coder::array<double, 2U> &x, ::coder::array<creal_T, 2U> &y)
     }
 }
 
-//
-// Arguments    : const ::coder::array<double, 2U> &x
-//                ::coder::array<creal_T, 2U> &y
-// Return Type  : void
-//
-void e_fft(const ::coder::array<double, 2U> &x, ::coder::array<creal_T, 2U> &y)
+void d_fft(const ::coder::array<double, 2U> &x, ::coder::array<creal_T, 2U> &y)
 {
     if (x.size(1) == 0) {
         y.set_size(4096, 0);
@@ -137,12 +82,7 @@ void e_fft(const ::coder::array<double, 2U> &x, ::coder::array<creal_T, 2U> &y)
     }
 }
 
-//
-// Arguments    : const ::coder::array<double, 2U> &x
-//                ::coder::array<creal_T, 2U> &y
-// Return Type  : void
-//
-void f_fft(const ::coder::array<double, 2U> &x, ::coder::array<creal_T, 2U> &y)
+void e_fft(const ::coder::array<double, 2U> &x, ::coder::array<creal_T, 2U> &y)
 {
     if (x.size(1) == 0) {
         y.set_size(4096, 0);
@@ -168,57 +108,32 @@ void f_fft(const ::coder::array<double, 2U> &x, ::coder::array<creal_T, 2U> &y)
     }
 }
 
-//
-// Arguments    : const ::coder::array<double, 2U> &x
-//                ::coder::array<creal_T, 2U> &y
-// Return Type  : void
-//
-void fft(const ::coder::array<double, 2U> &x, ::coder::array<creal_T, 2U> &y)
+void f_fft(const ::coder::array<double, 2U> &x, ::coder::array<creal_T, 2U> &y)
 {
-    array<creal_T, 1U> r;
-    array<double, 2U> costab;
-    array<double, 2U> sintab;
-    array<double, 2U> sintabinv;
-    int nChan;
-    int nRows;
-    if ((x.size(0) == 0) || (x.size(1) == 0)) {
-        y.set_size(x.size(0), x.size(1));
-        nRows = x.size(0) * x.size(1);
-        for (int i = 0; i < nRows; i++) {
+    if (x.size(1) == 0) {
+        y.set_size(8192, 0);
+    } else {
+        int i;
+        int loop_ub;
+        int nChan;
+        nChan = x.size(1);
+        y.set_size(8192, x.size(1));
+        loop_ub = 8192 * x.size(1);
+        for (i = 0; i < loop_ub; i++) {
             y[i].re = 0.0;
             y[i].im = 0.0;
         }
-    } else {
-        boolean_T useRadix2;
-        useRadix2 = ((x.size(0) & (x.size(0) - 1)) == 0);
-        internal::FFTImplementationCallback::get_algo_sizes(
-            x.size(0), useRadix2, &nChan, &nRows);
-        internal::FFTImplementationCallback::generate_twiddle_tables(
-            nRows, useRadix2, costab, sintab, sintabinv);
-        if (useRadix2) {
-            nChan = x.size(1);
-            y.set_size(x.size(0), x.size(1));
-            for (int chan = 0; chan < nChan; chan++) {
-                internal::FFTImplementationCallback::r2br_r2dit_trig_impl(
-                    x, chan * x.size(0), x.size(0), costab, sintab, r);
-                nRows = r.size(0);
-                for (int i = 0; i < nRows; i++) {
-                    y[i + y.size(0) * chan] = r[i];
-                }
+        for (loop_ub = 0; loop_ub < nChan; loop_ub++) {
+            for (i = 0; i < 8192; i++) {
+                y[i + 8192 * loop_ub].re = 0.0;
+                y[i + 8192 * loop_ub].im = 0.0;
             }
-        } else {
-            internal::FFTImplementationCallback::dobluesteinfft(
-                x, nChan, x.size(0), costab, sintab, sintabinv, y);
+            internal::FFTImplementationCallback::i_doHalfLengthRadix2(
+                x, loop_ub * 2205, *(creal_T(*)[8192]) & y[8192 * loop_ub]);
         }
     }
 }
 
-//
-// Arguments    : const ::coder::array<double, 1U> &x
-//                double varargin_1
-//                ::coder::array<creal_T, 1U> &y
-// Return Type  : void
-//
 void fft(const ::coder::array<double, 1U> &x, double varargin_1,
          ::coder::array<creal_T, 1U> &y)
 {
@@ -254,12 +169,6 @@ void fft(const ::coder::array<double, 1U> &x, double varargin_1,
     }
 }
 
-//
-// Arguments    : const ::coder::array<double, 2U> &x
-//                double varargin_1
-//                ::coder::array<creal_T, 2U> &y
-// Return Type  : void
-//
 void fft(const ::coder::array<double, 2U> &x, double varargin_1,
          ::coder::array<creal_T, 2U> &y)
 {
@@ -315,74 +224,33 @@ void fft(const ::coder::array<double, 2U> &x, double varargin_1,
     }
 }
 
-//
-// Arguments    : const ::coder::array<double, 1U> &x
-//                ::coder::array<creal_T, 1U> &y
-// Return Type  : void
-//
-void fft(const ::coder::array<double, 1U> &x, ::coder::array<creal_T, 1U> &y)
-{
-    array<double, 2U> costab;
-    array<double, 2U> sintab;
-    array<double, 2U> sintabinv;
-    int N2blue;
-    int nRows;
-    if (x.size(0) == 0) {
-        y.set_size(0);
-    } else {
-        boolean_T useRadix2;
-        useRadix2 = ((x.size(0) & (x.size(0) - 1)) == 0);
-        internal::FFTImplementationCallback::get_algo_sizes(
-            x.size(0), useRadix2, &N2blue, &nRows);
-        internal::FFTImplementationCallback::generate_twiddle_tables(
-            nRows, useRadix2, costab, sintab, sintabinv);
-        if (useRadix2) {
-            internal::FFTImplementationCallback::r2br_r2dit_trig_impl(
-                x, x.size(0), costab, sintab, y);
-        } else {
-            internal::FFTImplementationCallback::dobluesteinfft(
-                x, N2blue, x.size(0), costab, sintab, sintabinv, y);
-        }
-    }
-}
-
-//
-// Arguments    : const ::coder::array<double, 2U> &x
-//                ::coder::array<creal_T, 2U> &y
-// Return Type  : void
-//
-void g_fft(const ::coder::array<double, 2U> &x, ::coder::array<creal_T, 2U> &y)
+void fft(const ::coder::array<double, 2U> &x, ::coder::array<creal_T, 2U> &y)
 {
     if (x.size(1) == 0) {
-        y.set_size(8192, 0);
+        y.set_size(1024, 0);
     } else {
         int i;
         int loop_ub;
         int nChan;
         nChan = x.size(1);
-        y.set_size(8192, x.size(1));
-        loop_ub = 8192 * x.size(1);
+        y.set_size(1024, x.size(1));
+        loop_ub = 1024 * x.size(1);
         for (i = 0; i < loop_ub; i++) {
             y[i].re = 0.0;
             y[i].im = 0.0;
         }
         for (loop_ub = 0; loop_ub < nChan; loop_ub++) {
-            for (i = 0; i < 8192; i++) {
-                y[i + 8192 * loop_ub].re = 0.0;
-                y[i + 8192 * loop_ub].im = 0.0;
+            for (i = 0; i < 1024; i++) {
+                y[i + 1024 * loop_ub].re = 0.0;
+                y[i + 1024 * loop_ub].im = 0.0;
             }
-            internal::FFTImplementationCallback::i_doHalfLengthRadix2(
-                x, loop_ub * 2205, *(creal_T(*)[8192]) & y[8192 * loop_ub]);
+            internal::FFTImplementationCallback::doHalfLengthRadix2(
+                x, loop_ub * 400, *(creal_T(*)[1024]) & y[1024 * loop_ub]);
         }
     }
 }
 
-//
-// Arguments    : const ::coder::array<double, 2U> &x
-//                ::coder::array<creal_T, 2U> &y
-// Return Type  : void
-//
-void h_fft(const ::coder::array<double, 2U> &x, ::coder::array<creal_T, 2U> &y)
+void g_fft(const ::coder::array<double, 2U> &x, ::coder::array<creal_T, 2U> &y)
 {
     if (x.size(1) == 0) {
         y.set_size(8192, 0);
@@ -409,9 +277,3 @@ void h_fft(const ::coder::array<double, 2U> &x, ::coder::array<creal_T, 2U> &y)
 }
 
 } // namespace coder
-
-//
-// File trailer for fft.cpp
-//
-// [EOF]
-//

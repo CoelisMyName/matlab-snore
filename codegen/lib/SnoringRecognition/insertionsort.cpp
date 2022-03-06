@@ -1,24 +1,8 @@
-//
-// File: insertionsort.cpp
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
-// Include Files
 #include "insertionsort.h"
 #include "anonymous_function.h"
 #include "rt_nonfinite.h"
 #include "coder_array.h"
 
-// Function Definitions
-//
-// Arguments    : ::coder::array<int, 1U> &x
-//                int xstart
-//                int xend
-//                const anonymous_function *cmp
-// Return Type  : void
-//
 namespace coder {
 namespace internal {
 void insertionsort(::coder::array<int, 1U> &x, int xstart, int xend,
@@ -52,9 +36,3 @@ void insertionsort(::coder::array<int, 1U> &x, int xstart, int xend,
 
 } // namespace internal
 } // namespace coder
-
-//
-// File trailer for insertionsort.cpp
-//
-// [EOF]
-//

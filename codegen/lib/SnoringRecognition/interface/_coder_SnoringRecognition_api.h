@@ -1,25 +1,15 @@
-//
-// File: _coder_SnoringRecognition_api.h
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
 #ifndef _CODER_SNORINGRECOGNITION_API_H
 #define _CODER_SNORINGRECOGNITION_API_H
 
-// Include Files
 #include "coder_array_mex.h"
 #include "emlrt.h"
 #include "tmwtypes.h"
 #include <algorithm>
 #include <cstring>
 
-// Variable Declarations
 extern emlrtCTX emlrtRootTLSGlobal;
 extern emlrtContext emlrtContextGlobal;
 
-// Function Declarations
 void SnoringRecognition_atexit();
 
 void SnoringRecognition_initialize();
@@ -93,7 +83,7 @@ void patient_classifier_api(const mxArray *const prhs[19],
                             const mxArray **plhs);
 
 void pitch_feat(coder::array<real_T, 1U> *sig, real_T fs, real_T *period_mean,
-                real_T *period_min, real_T *period_max, real_T *period_var);
+                real_T *period_max, real_T *period_min, real_T *period_var);
 
 void pitch_feat_api(const mxArray *const prhs[2], int32_T nlhs,
                     const mxArray *plhs[4]);
@@ -122,8 +112,3 @@ void zweight(coder::array<real_T, 1U> *x, real_T p[8], real_T f[8], real_T *s);
 void zweight_api(const mxArray *prhs, int32_T nlhs, const mxArray *plhs[3]);
 
 #endif
-//
-// File trailer for _coder_SnoringRecognition_api.h
-//
-// [EOF]
-//

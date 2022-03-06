@@ -1,20 +1,7 @@
-//
-// File: recip.cpp
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
-// Include Files
 #include "recip.h"
 #include "rt_nonfinite.h"
 #include <math.h>
 
-// Function Definitions
-//
-// Arguments    : const creal_T y
-// Return Type  : creal_T
-//
 namespace coder {
 namespace internal {
 creal_T recip(const creal_T y)
@@ -60,9 +47,3 @@ creal_T recip(const creal_T y)
 
 } // namespace internal
 } // namespace coder
-
-//
-// File trailer for recip.cpp
-//
-// [EOF]
-//

@@ -1,11 +1,3 @@
-//
-// File: predictOneWithCache.cpp
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
-// Include Files
 #include "predictOneWithCache.h"
 #include "CompactClassificationTree.h"
 #include "rt_nonfinite.h"
@@ -13,19 +5,6 @@
 #include "rt_nonfinite.h"
 #include <math.h>
 
-// Function Definitions
-//
-// Arguments    : const ::coder::array<double, 2U> &X
-//                ::coder::array<double, 2U> &cachedScore
-//                ::coder::array<double, 1U> &cachedWeights
-//                const
-//                ::coder::classreg::learning::classif::CompactClassificationTree
-//                *weak_learner double learnerWeights boolean_T *cached const
-//                double classnames[2] const ::coder::array<boolean_T, 1U>
-//                &useObsForLearner boolean_T initCache
-//                ::coder::array<double, 2U> &score
-// Return Type  : void
-//
 namespace coder {
 namespace classreg {
 namespace learning {
@@ -329,9 +308,3 @@ void predictOneWithCache(
 } // namespace learning
 } // namespace classreg
 } // namespace coder
-
-//
-// File trailer for predictOneWithCache.cpp
-//
-// [EOF]
-//

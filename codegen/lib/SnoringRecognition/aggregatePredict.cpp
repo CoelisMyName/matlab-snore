@@ -1,28 +1,9 @@
-//
-// File: aggregatePredict.cpp
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
-// Include Files
 #include "aggregatePredict.h"
 #include "CompactClassificationTree.h"
 #include "predictOneWithCache.h"
 #include "rt_nonfinite.h"
 #include "coder_array.h"
 
-// Function Definitions
-//
-// Arguments    : const ::coder::array<double, 2U> &X
-//                ::coder::array<double, 2U> &score
-//                const double learnerWeights[400]
-//                const boolean_T isCached[400]
-//                const double classNames[2]
-//                const boolean_T learners[400]
-//                const ::coder::array<boolean_T, 2U> &useObsForLearner
-// Return Type  : void
-//
 namespace coder
 {
     namespace classreg
@@ -9255,9 +9236,3 @@ namespace coder
         }
     }
 }
-
-//
-// File trailer for aggregatePredict.cpp
-//
-// [EOF]
-//

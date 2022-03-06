@@ -1,11 +1,3 @@
-//
-// File: xzggev.cpp
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
-// Include Files
 #include "xzggev.h"
 #include "SnoringRecognition_rtwutil.h"
 #include "rt_nonfinite.h"
@@ -13,17 +5,6 @@
 #include "xzlartg.h"
 #include "rt_nonfinite.h"
 
-// Function Definitions
-//
-// Arguments    : creal_T A_data[]
-//                const int A_size[2]
-//                int *info
-//                creal_T alpha1_data[]
-//                int *alpha1_size
-//                creal_T beta1_data[]
-//                int *beta1_size
-// Return Type  : void
-//
 namespace coder {
 namespace internal {
 namespace reflapack {
@@ -348,9 +329,3 @@ void xzggev(creal_T A_data[], const int A_size[2], int *info,
 } // namespace reflapack
 } // namespace internal
 } // namespace coder
-
-//
-// File trailer for xzggev.cpp
-//
-// [EOF]
-//

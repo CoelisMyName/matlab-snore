@@ -1,21 +1,7 @@
-//
-// File: blockedSummation.cpp
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
-// Include Files
 #include "blockedSummation.h"
 #include "rt_nonfinite.h"
 #include "coder_array.h"
 
-// Function Definitions
-//
-// Arguments    : const ::coder::array<double, 1U> &x
-//                int vlen
-// Return Type  : double
-//
 namespace coder {
 double blockedSummation(const ::coder::array<double, 1U> &x, int vlen)
 {
@@ -65,9 +51,3 @@ double blockedSummation(const ::coder::array<double, 1U> &x, int vlen)
 }
 
 } // namespace coder
-
-//
-// File trailer for blockedSummation.cpp
-//
-// [EOF]
-//

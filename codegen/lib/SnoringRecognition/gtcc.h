@@ -1,23 +1,13 @@
-//
-// File: gtcc.h
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
 #ifndef GTCC_H
 #define GTCC_H
 
-// Include Files
 #include "rtwtypes.h"
 #include "coder_array.h"
 #include <cstddef>
 #include <cstdlib>
 
-// Type Declarations
 struct SnoringRecognitionStackData;
 
-// Function Declarations
 namespace coder {
 void b_gtcc(const ::coder::array<double, 1U> &audioIn,
             ::coder::array<double, 2U> &coeffs,
@@ -66,8 +56,3 @@ void gtcc(SnoringRecognitionStackData *SD,
 } // namespace coder
 
 #endif
-//
-// File trailer for gtcc.h
-//
-// [EOF]
-//

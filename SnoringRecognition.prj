@@ -21,14 +21,14 @@
       <param.RowMajor>option.RowMajor.ColumnMajor</param.RowMajor>
       <param.HighlightPotentialRowMajorIssues>true</param.HighlightPotentialRowMajorIssues>
       <param.PreserveArrayDimensions>false</param.PreserveArrayDimensions>
-      <param.EliminateSingleDimensions />
+      <param.EliminateSingleDimensions>false</param.EliminateSingleDimensions>
       <param.StackUsageMax>200000</param.StackUsageMax>
       <param.FilePartitionMethod>option.FilePartitionMethod.MapMFileToCFile</param.FilePartitionMethod>
       <param.GenerateComments>true</param.GenerateComments>
       <param.MATLABSourceComments>false</param.MATLABSourceComments>
       <param.CodeFormattingTool>option.CodeFormattingTool.Auto</param.CodeFormattingTool>
       <param.ReservedNameArray />
-      <param.CppStyleConst />
+      <param.CppStyleConst>false</param.CppStyleConst>
       <param.EnableDebugging />
       <param.Verbosity>option.Verbosity.Verbose</param.Verbosity>
       <param.ReportPotentialDifferences>false</param.ReportPotentialDifferences>
@@ -40,7 +40,7 @@
       <param.VerificationMode>option.VerificationMode.None</param.VerificationMode>
       <param.VerificationStatus>option.VerificationStatus.Inactive</param.VerificationStatus>
       <param.EnableMexProfiling>false</param.EnableMexProfiling>
-      <var.BuiltWithMexProfiling />
+      <var.BuiltWithMexProfiling>false</var.BuiltWithMexProfiling>
       <param.CustomSourceCode />
       <param.CustomHeaderCode />
       <param.CustomInitializer />
@@ -71,9 +71,9 @@
       <param.EnableJIT>false</param.EnableJIT>
       <param.EnableJITSilentBailOut />
       <param.CheckForIssuesJIT />
-      <param.EnableGitSupport />
-      <param.EnableAutoCommit />
-      <param.RepositoryStyle />
+      <param.EnableGitSupport>false</param.EnableGitSupport>
+      <param.EnableAutoCommit>false</param.EnableAutoCommit>
+      <param.RepositoryStyle>option.RepositoryStyle.Auto</param.RepositoryStyle>
       <unset>
         <param.BuiltInstrumentedMex />
         <param.RanInstrumentedMex />
@@ -153,7 +153,7 @@
       <param.PurelyIntegerCode>false</param.PurelyIntegerCode>
       <param.SupportNonFinite>true</param.SupportNonFinite>
       <param.LoopUnrollThreshold>5</param.LoopUnrollThreshold>
-      <param.EnableAutoParallelization>false</param.EnableAutoParallelization>
+      <param.EnableAutoParallelization>true</param.EnableAutoParallelization>
       <param.EnableVariableSizing>true</param.EnableVariableSizing>
       <param.DynamicMemoryAllocation>option.DynamicMemoryAllocation.Threshold</param.DynamicMemoryAllocation>
       <param.DynamicMemoryAllocationThreshold>65536</param.DynamicMemoryAllocationThreshold>
@@ -161,11 +161,11 @@
       <param.RowMajor>option.RowMajor.ColumnMajor</param.RowMajor>
       <param.HighlightPotentialRowMajorIssues>true</param.HighlightPotentialRowMajorIssues>
       <param.PreserveArrayDimensions>false</param.PreserveArrayDimensions>
-      <param.EliminateSingleDimensions />
+      <param.EliminateSingleDimensions>false</param.EliminateSingleDimensions>
       <param.StackUsageMax>200000</param.StackUsageMax>
       <param.MultiInstanceCode>true</param.MultiInstanceCode>
       <param.FilePartitionMethod>option.FilePartitionMethod.MapMFileToCFile</param.FilePartitionMethod>
-      <param.GenerateComments>true</param.GenerateComments>
+      <param.GenerateComments>false</param.GenerateComments>
       <param.CommentStyle>option.CommentStyle.Auto</param.CommentStyle>
       <param.MATLABSourceComments>true</param.MATLABSourceComments>
       <param.MATLABFcnDesc>true</param.MATLABFcnDesc>
@@ -206,9 +206,9 @@
       <param.CustomSymbolStrEMXArray>emxArray_$M$N</param.CustomSymbolStrEMXArray>
       <param.CustomSymbolStrEMXArrayFcn>emx$M$N</param.CustomSymbolStrEMXArrayFcn>
       <param.ReservedNameArray />
-      <param.CppStyleConst />
+      <param.CppStyleConst>false</param.CppStyleConst>
       <param.RuntimeChecks>false</param.RuntimeChecks>
-      <param.Verbose />
+      <param.Verbose>false</param.Verbose>
       <param.Verbosity>option.Verbosity.Info</param.Verbosity>
       <param.ReportPotentialDifferences>false</param.ReportPotentialDifferences>
       <param.GenerateReport>false</param.GenerateReport>
@@ -237,7 +237,7 @@
       <param.PostCodeGenCommand />
       <param.TargetLangStandard>C++11 (ISO)</param.TargetLangStandard>
       <param.CodeReplacementLibrary />
-      <param.DeprecatedCRLFlag />
+      <param.DeprecatedCRLFlag>false</param.DeprecatedCRLFlag>
       <param.SameHardware>true</param.SameHardware>
       <param.Toolchain>Automatically locate an installed toolchain</param.Toolchain>
       <param.BuildConfiguration>Faster Runs</param.BuildConfiguration>
@@ -261,7 +261,7 @@
       <param.target.ActiveTarget />
       <param.HardwareVendor.Production>Generic</param.HardwareVendor.Production>
       <param.HardwareType.Production>MATLAB Host Computer</param.HardwareType.Production>
-      <param.HWDeviceType.Production />
+      <param.HWDeviceType.Production>Generic-&gt;MATLAB Host Computer</param.HWDeviceType.Production>
       <var.instance.enabled.Production>true</var.instance.enabled.Production>
       <param.HardwareSizeChar.Production>8</param.HardwareSizeChar.Production>
       <param.HardwareSizeShort.Production>16</param.HardwareSizeShort.Production>
@@ -282,7 +282,7 @@
       <param.HardwareDivisionRounding.Production>option.HardwareDivisionRounding.Zero</param.HardwareDivisionRounding.Production>
       <param.HardwareVendor.Target>Generic</param.HardwareVendor.Target>
       <param.HardwareType.Target>MATLAB Host Computer</param.HardwareType.Target>
-      <param.HWDeviceType.Target />
+      <param.HWDeviceType.Target>Generic-&gt;MATLAB Host Computer</param.HWDeviceType.Target>
       <var.instance.enabled.Target>false</var.instance.enabled.Target>
       <param.HardwareSizeChar.Target>8</param.HardwareSizeChar.Target>
       <param.HardwareSizeShort.Target>16</param.HardwareSizeShort.Target>
@@ -321,8 +321,8 @@
       <param.InlineThreshold>10</param.InlineThreshold>
       <param.InlineThresholdMax>200</param.InlineThresholdMax>
       <param.InlineStackLimit>1000000</param.InlineStackLimit>
-      <param.InlineBetweenUserFunctions>option.InlineBetweenUserFunctions.Never</param.InlineBetweenUserFunctions>
-      <param.InlineBetweenUserAndMathWorksFunctions>option.InlineBetweenUserAndMathWorksFunctions.Never</param.InlineBetweenUserAndMathWorksFunctions>
+      <param.InlineBetweenUserFunctions>option.InlineBetweenUserFunctions.Speed</param.InlineBetweenUserFunctions>
+      <param.InlineBetweenUserAndMathWorksFunctions>option.InlineBetweenUserAndMathWorksFunctions.Speed</param.InlineBetweenUserAndMathWorksFunctions>
       <param.InlineBetweenMathWorksFunctions>option.InlineBetweenMathWorksFunctions.Speed</param.InlineBetweenMathWorksFunctions>
       <param.EnableStrengthReduction>false</param.EnableStrengthReduction>
       <param.EnableMemcpy>true</param.EnableMemcpy>
@@ -338,9 +338,9 @@
       <param.GenerateDefaultInSwitch>false</param.GenerateDefaultInSwitch>
       <param.EnableTraceability>true</param.EnableTraceability>
       <param.UseECoderFeatures>true</param.UseECoderFeatures>
-      <param.EnableGitSupport />
-      <param.EnableAutoCommit />
-      <param.RepositoryStyle />
+      <param.EnableGitSupport>false</param.EnableGitSupport>
+      <param.EnableAutoCommit>false</param.EnableAutoCommit>
+      <param.RepositoryStyle>option.RepositoryStyle.Auto</param.RepositoryStyle>
       <param.psCustomPrjState>false</param.psCustomPrjState>
       <param.psCustomProjectFile />
       <param.psCheckConfValue>option.psCheckConfValue.onWarnCheckConfDlg</param.psCheckConfValue>
@@ -359,7 +359,6 @@
         <param.PurelyIntegerCode />
         <param.SupportNonFinite />
         <param.LoopUnrollThreshold />
-        <param.EnableAutoParallelization />
         <param.EnableVariableSizing />
         <param.DynamicMemoryAllocation />
         <param.DynamicMemoryAllocationThreshold />
@@ -369,7 +368,6 @@
         <param.EliminateSingleDimensions />
         <param.StackUsageMax />
         <param.FilePartitionMethod />
-        <param.GenerateComments />
         <param.CommentStyle />
         <param.MATLABFcnDesc />
         <param.ConvertIfToSwitch />
@@ -484,6 +482,8 @@
         <param.InlineThreshold />
         <param.InlineThresholdMax />
         <param.InlineStackLimit />
+        <param.InlineBetweenUserFunctions />
+        <param.InlineBetweenUserAndMathWorksFunctions />
         <param.InlineBetweenMathWorksFunctions />
         <param.EnableStrengthReduction />
         <param.EnableMemcpy />
@@ -861,10 +861,10 @@
     <param.objective>option.objective.c</param.objective>
     <param.WorkflowStep>generateCode</param.WorkflowStep>
     <param.TestSnippets />
-    <param.ExternalFcnMajority />
+    <param.ExternalFcnMajority>column</param.ExternalFcnMajority>
     <param.UseGlobals>option.UseGlobals.No</param.UseGlobals>
     <param.outputfile>${PROJECT_ROOT}\codegen\lib\SnoringRecognition\SnoringRecognition.lib</param.outputfile>
-    <param.version />
+    <param.version>R2012a</param.version>
     <param.HasECoderFeatures>true</param.HasECoderFeatures>
     <param.HasGpuCoder>true</param.HasGpuCoder>
     <var.HasNeuralNetworkToolbox>true</var.HasNeuralNetworkToolbox>
@@ -872,11 +872,11 @@
     <param.grt.mainhtml />
     <param.CallGeneratedCodeFromTest>true</param.CallGeneratedCodeFromTest>
     <param.AutoInferDefaultFile />
-    <param.AutoInferUseVariableSize />
-    <param.AutoInferUseUnboundedSize />
-    <param.AutoInferVariableSizeThreshold />
-    <param.AutoInferUnboundedSizeThreshold />
-    <param.EnableFixedPointStep />
+    <param.AutoInferUseVariableSize>false</param.AutoInferUseVariableSize>
+    <param.AutoInferUseUnboundedSize>false</param.AutoInferUseUnboundedSize>
+    <param.AutoInferVariableSizeThreshold>1024</param.AutoInferVariableSizeThreshold>
+    <param.AutoInferUnboundedSizeThreshold>2048</param.AutoInferUnboundedSizeThreshold>
+    <param.EnableFixedPointStep>false</param.EnableFixedPointStep>
     <param.EnableScreener>true</param.EnableScreener>
     <param.AnnotationChecksum>3950665915</param.AnnotationChecksum>
     <var.LegacyTarget />
@@ -887,19 +887,19 @@
     <param.unifiedParamStorage />
     <var.gc.lastOutputRoot>codegen\lib\SnoringRecognition</var.gc.lastOutputRoot>
     <var.gc.lastOutputType>C_CODE</var.gc.lastOutputType>
-    <var.gc.preBuildChecksum>2348701243</var.gc.preBuildChecksum>
+    <var.gc.preBuildChecksum>4278289832</var.gc.preBuildChecksum>
     <var.cfi.lastOutputRoot />
     <var.cfi.preBuildChecksum />
     <var.outdatedOnRestore>false</var.outdatedOnRestore>
-    <var.lastUserSourceChecksum>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;&lt;checksum&gt;&lt;includedFiles&gt;&lt;file&gt;C:\repo\matlab\snore\amax_group.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\audspec.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\aweight.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\bark2hz.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\bark_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\BARKenergy.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\cep_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\classifier.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\CrestFactor.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\cweight.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\deltas.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\dolpc.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\enframe.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\FeatureTimeZeroCrossingRate.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\fft2barkmx.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\fft2melmx.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\fmt_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\formantfeature.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\frq2mel.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\GMM_score.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\gtcc_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\HENR.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\hz2bark.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\hz2mel.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\lifter.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\lmultigauss.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\lpc2cep.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\lpc2spec.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\LPCFeature.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\lsum.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\m_lpc.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\m_specgram.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\median_filter.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\mel2frq.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\mel2hz.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\melbankm.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\mfcc_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\mfcc_m.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\noise_segment.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\octbank.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\octdsgn.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\patient_classifier.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\pitch_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\postaud.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\powspec.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\PR800.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\pr800_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\rastafilt.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\rastaplp.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\se_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\seekfmts1.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\spec2cep.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\sum_group.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\vad.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\vad_below_threshold.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\vad_length_filter.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\vad_threshold.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\vad_wave.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\yuzhiSpeci.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\zweight.m&lt;/file&gt;&lt;/includedFiles&gt;&lt;value&gt;3412422256&lt;/value&gt;&lt;/checksum&gt;</var.lastUserSourceChecksum>
+    <var.lastUserSourceChecksum>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;&lt;checksum&gt;&lt;includedFiles&gt;&lt;file&gt;C:\repo\matlab\snore\amax_group.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\audspec.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\aweight.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\bark2hz.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\bark_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\BARKenergy.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\cep_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\classifier.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\CrestFactor.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\cweight.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\deltas.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\dolpc.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\enframe.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\FeatureTimeZeroCrossingRate.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\fft2barkmx.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\fft2melmx.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\fmt_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\formantfeature.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\frq2mel.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\GMM_score.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\gtcc_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\HENR.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\hz2bark.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\hz2mel.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\lifter.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\lmultigauss.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\lpc2cep.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\lpc2spec.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\LPCFeature.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\lsum.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\m_lpc.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\m_specgram.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\median_filter.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\mel2frq.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\mel2hz.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\melbankm.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\mfcc_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\mfcc_m.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\noise_segment.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\octbank.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\octdsgn.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\patient_classifier.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\pitch_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\postaud.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\powspec.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\PR800.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\pr800_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\rastafilt.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\rastaplp.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\se_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\seekfmts1.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\spec2cep.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\sum_group.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\vad.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\vad_below_threshold.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\vad_length_filter.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\vad_threshold.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\vad_wave.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\yuzhiSpeci.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\zweight.m&lt;/file&gt;&lt;/includedFiles&gt;&lt;value&gt;4233353929&lt;/value&gt;&lt;/checksum&gt;</var.lastUserSourceChecksum>
     <var.sourceSetState>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;&lt;sourceModel&gt;&lt;primarySourceFiles&gt;&lt;file&gt;C:\repo\matlab\snore\amax_group.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\audspec.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\aweight.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\bark2hz.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\bark_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\BARKenergy.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\cep_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\classifier.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\CrestFactor.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\cweight.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\deltas.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\dolpc.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\enframe.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\FeatureTimeZeroCrossingRate.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\fft2barkmx.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\fmt_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\formantfeature.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\frq2mel.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\GMM_score.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\gtcc_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\HENR.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\hz2bark.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\lifter.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\lmultigauss.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\lpc2cep.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\lpc2spec.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\LPCFeature.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\lsum.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\m_lpc.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\m_specgram.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\median_filter.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\mel2frq.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\melbankm.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\mfcc_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\mfcc_m.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\noise_segment.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\octbank.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\octdsgn.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\patient_classifier.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\pitch_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\postaud.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\powspec.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\PR800.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\pr800_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\rastaplp.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\se_feat.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\seekfmts1.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\sum_group.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\vad.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\vad_below_threshold.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\vad_length_filter.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\vad_threshold.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\vad_wave.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\yuzhiSpeci.m&lt;/file&gt;&lt;file&gt;C:\repo\matlab\snore\zweight.m&lt;/file&gt;&lt;/primarySourceFiles&gt;&lt;fixedPointSourceFiles/&gt;&lt;fixedPointSourceRegistered&gt;false&lt;/fixedPointSourceRegistered&gt;&lt;fixedPointSourceSelected&gt;false&lt;/fixedPointSourceSelected&gt;&lt;/sourceModel&gt;</var.sourceSetState>
     <param.forceMexBuild>false</param.forceMexBuild>
-    <param.NoDefaultJIT />
+    <param.NoDefaultJIT>false</param.NoDefaultJIT>
     <param.configImportActive>false</param.configImportActive>
     <var.isGpuCoder>false</var.isGpuCoder>
     <var.notGpuCoder>true</var.notGpuCoder>
     <var.boundToGui>true</var.boundToGui>
-    <var.isConfigDialog />
+    <var.isConfigDialog>false</var.isConfigDialog>
     <var.ecoderEnabled>true</var.ecoderEnabled>
     <param.mex.outputfile>aweight_mex</param.mex.outputfile>
     <param.grt.outputfile>SnoringRecognition</param.grt.outputfile>
@@ -910,15 +910,15 @@
     <param.CppNamespaceForMathworksCode>coder</param.CppNamespaceForMathworksCode>
     <param.CppPreserveClasses>true</param.CppPreserveClasses>
     <param.gpu.Enabled>false</param.gpu.Enabled>
-    <param.gpu.SelectCudaDevice />
+    <param.gpu.SelectCudaDevice>-1</param.gpu.SelectCudaDevice>
     <param.gpu.ComputeCapability>3.5</param.gpu.ComputeCapability>
     <param.gpu.CustomComputeCapability />
     <param.gpu.MallocMode>discrete</param.gpu.MallocMode>
-    <param.gpu.MallocThreshold />
-    <param.gpu.StackLimitPerThread />
-    <param.gpu.MaximumBlocksPerKernel />
+    <param.gpu.MallocThreshold>200</param.gpu.MallocThreshold>
+    <param.gpu.StackLimitPerThread>1024</param.gpu.StackLimitPerThread>
+    <param.gpu.MaximumBlocksPerKernel>0</param.gpu.MaximumBlocksPerKernel>
     <param.gpu.Benchmarking>false</param.gpu.Benchmarking>
-    <param.gpu.SafeBuild />
+    <param.gpu.SafeBuild>false</param.gpu.SafeBuild>
     <param.gpu.KernelNamePrefix />
     <param.gpu.CompilerFlags />
     <param.gpu.EnableCUBLAS>true</param.gpu.EnableCUBLAS>
@@ -948,7 +948,7 @@
     <param.UsePreconditions>false</param.UsePreconditions>
     <param.FeatureFlags />
     <param.FixedPointMode>option.FixedPointMode.None</param.FixedPointMode>
-    <param.AutoScaleLoopIndexVariables />
+    <param.AutoScaleLoopIndexVariables>false</param.AutoScaleLoopIndexVariables>
     <param.ComputedFixedPointData />
     <param.UserFixedPointData />
     <param.DefaultWordLength>16</param.DefaultWordLength>
@@ -978,8 +978,8 @@
     <param.EnableCodeEfficiencyChecks>false</param.EnableCodeEfficiencyChecks>
     <param.DefaultFixedPointSignedness>option.DefaultFixedPointSignedness.Automatic</param.DefaultFixedPointSignedness>
     <param.FixedPointTypeProposalMode>option.FixedPointTypeProposalMode.ProposeFractionLengths</param.FixedPointTypeProposalMode>
-    <param.EnableFixedPointStep />
-    <var.lastFixedPointAction />
+    <param.EnableFixedPointStep>false</param.EnableFixedPointStep>
+    <var.lastFixedPointAction>option.fixedPointAction.none</var.lastFixedPointAction>
     <var.lastSimContext />
     <var.lastVerifyContext />
     <param.fpDataRoot />
@@ -987,7 +987,7 @@
     <var.snapshotChecksum />
     <param.fpLastConvertChecksum />
     <var.functionBlockSid />
-    <param.fptSignedness />
+    <param.fptSignedness>false</param.fptSignedness>
     <var.FixedPointAnalysisMode>option.FixedPointAnalysisMode.Sim</var.FixedPointAnalysisMode>
     <param.FixedPointUseDesignRanges>false</param.FixedPointUseDesignRanges>
     <unset>

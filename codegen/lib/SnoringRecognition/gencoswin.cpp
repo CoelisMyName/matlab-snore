@@ -1,24 +1,9 @@
-//
-// File: gencoswin.cpp
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
-// Include Files
 #include "gencoswin.h"
 #include "rt_nonfinite.h"
 #include "coder_array.h"
 #include "rt_nonfinite.h"
 #include <math.h>
 
-// Function Definitions
-//
-// Arguments    : double m
-//                double n
-//                ::coder::array<double, 1U> &w
-// Return Type  : void
-//
 namespace coder {
 void calc_window(double m, double n, ::coder::array<double, 1U> &w)
 {
@@ -56,9 +41,3 @@ void calc_window(double m, double n, ::coder::array<double, 1U> &w)
 }
 
 } // namespace coder
-
-//
-// File trailer for gencoswin.cpp
-//
-// [EOF]
-//

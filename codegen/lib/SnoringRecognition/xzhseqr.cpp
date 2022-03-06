@@ -1,11 +1,3 @@
-//
-// File: xzhseqr.cpp
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
-// Include Files
 #include "xzhseqr.h"
 #include "SnoringRecognition_data.h"
 #include "SnoringRecognition_rtwutil.h"
@@ -16,12 +8,6 @@
 #include "rt_nonfinite.h"
 #include <math.h>
 
-// Function Definitions
-//
-// Arguments    : creal_T h_data[]
-//                const int h_size[2]
-// Return Type  : int
-//
 namespace coder {
 namespace internal {
 namespace reflapack {
@@ -630,9 +616,3 @@ int eml_zlahqr(creal_T h_data[], const int h_size[2])
 } // namespace reflapack
 } // namespace internal
 } // namespace coder
-
-//
-// File trailer for xzhseqr.cpp
-//
-// [EOF]
-//

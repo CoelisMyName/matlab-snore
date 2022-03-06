@@ -1,11 +1,3 @@
-//
-// File: getCandidates.cpp
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
-// Include Files
 #include "getCandidates.h"
 #include "colon.h"
 #include "rt_nonfinite.h"
@@ -13,14 +5,6 @@
 #include "rt_nonfinite.h"
 #include <math.h>
 
-// Function Definitions
-//
-// Arguments    : ::coder::array<double, 2U> &domain
-//                const double edge[2]
-//                ::coder::array<double, 1U> &peaks
-//                ::coder::array<double, 1U> &locs
-// Return Type  : void
-//
 namespace coder {
 namespace audio {
 namespace internal {
@@ -179,9 +163,3 @@ void getCandidates(::coder::array<double, 2U> &domain, const double edge[2],
 } // namespace internal
 } // namespace audio
 } // namespace coder
-
-//
-// File trailer for getCandidates.cpp
-//
-// [EOF]
-//

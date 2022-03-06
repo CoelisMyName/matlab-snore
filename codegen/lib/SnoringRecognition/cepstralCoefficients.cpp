@@ -1,23 +1,9 @@
-//
-// File: cepstralCoefficients.cpp
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
-// Include Files
 #include "cepstralCoefficients.h"
 #include "rt_nonfinite.h"
 #include "coder_array.h"
 #include <math.h>
 #include <string.h>
 
-// Function Definitions
-//
-// Arguments    : ::coder::array<double, 2U> &S
-//                ::coder::array<double, 2U> &coeffs
-// Return Type  : void
-//
 namespace coder {
 void cepstralCoefficients(::coder::array<double, 2U> &S,
                           ::coder::array<double, 2U> &coeffs)
@@ -142,9 +128,3 @@ void cepstralCoefficients(::coder::array<double, 2U> &S,
 }
 
 } // namespace coder
-
-//
-// File trailer for cepstralCoefficients.cpp
-//
-// [EOF]
-//

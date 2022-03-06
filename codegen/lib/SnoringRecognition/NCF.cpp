@@ -1,11 +1,3 @@
-//
-// File: NCF.cpp
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
-// Include Files
 #include "NCF.h"
 #include "FFTImplementationCallback.h"
 #include "SnoringRecognition_rtwutil.h"
@@ -15,12 +7,6 @@
 #include "coder_array.h"
 #include <math.h>
 
-// Function Definitions
-//
-// Arguments    : const ::coder::array<double, 2U> &y
-//                ::coder::array<double, 1U> &f0
-// Return Type  : void
-//
 namespace coder {
 namespace audio {
 namespace internal {
@@ -52,7 +38,7 @@ void NCF(const ::coder::array<double, 2U> &y, ::coder::array<double, 1U> &f0)
     boolean_T empty_non_axis_sizes;
     edge[0] = 20.0;
     edge[1] = 160.0;
-    b_fft(y, x);
+    fft(y, x);
     nx = x.size(1) << 10;
     c1.set_size(1024, x.size(1));
     for (ibmat = 0; ibmat < nx; ibmat++) {
@@ -226,11 +212,6 @@ void NCF(const ::coder::array<double, 2U> &y, ::coder::array<double, 1U> &f0)
     }
 }
 
-//
-// Arguments    : const ::coder::array<double, 2U> &y
-//                ::coder::array<double, 1U> &f0
-// Return Type  : void
-//
 void b_NCF(const ::coder::array<double, 2U> &y, ::coder::array<double, 1U> &f0)
 {
     array<creal_T, 2U> x;
@@ -259,7 +240,7 @@ void b_NCF(const ::coder::array<double, 2U> &y, ::coder::array<double, 1U> &f0)
     boolean_T empty_non_axis_sizes;
     edge[0] = 28.0;
     edge[1] = 221.0;
-    c_fft(y, x);
+    b_fft(y, x);
     nx = x.size(1) << 11;
     c1.set_size(2048, x.size(1));
     for (ibmat = 0; ibmat < nx; ibmat++) {
@@ -434,11 +415,6 @@ void b_NCF(const ::coder::array<double, 2U> &y, ::coder::array<double, 1U> &f0)
     }
 }
 
-//
-// Arguments    : const ::coder::array<double, 2U> &y
-//                ::coder::array<double, 1U> &f0
-// Return Type  : void
-//
 void c_NCF(const ::coder::array<double, 2U> &y, ::coder::array<double, 1U> &f0)
 {
     array<creal_T, 2U> x;
@@ -467,7 +443,7 @@ void c_NCF(const ::coder::array<double, 2U> &y, ::coder::array<double, 1U> &f0)
     boolean_T empty_non_axis_sizes;
     edge[0] = 30.0;
     edge[1] = 240.0;
-    d_fft(y, x);
+    c_fft(y, x);
     nx = x.size(1) << 11;
     c1.set_size(2048, x.size(1));
     for (ibmat = 0; ibmat < nx; ibmat++) {
@@ -642,11 +618,6 @@ void c_NCF(const ::coder::array<double, 2U> &y, ::coder::array<double, 1U> &f0)
     }
 }
 
-//
-// Arguments    : const ::coder::array<double, 2U> &y
-//                ::coder::array<double, 1U> &f0
-// Return Type  : void
-//
 void d_NCF(const ::coder::array<double, 2U> &y, ::coder::array<double, 1U> &f0)
 {
     array<creal_T, 2U> x;
@@ -675,7 +646,7 @@ void d_NCF(const ::coder::array<double, 2U> &y, ::coder::array<double, 1U> &f0)
     boolean_T empty_non_axis_sizes;
     edge[0] = 55.0;
     edge[1] = 441.0;
-    e_fft(y, x);
+    d_fft(y, x);
     nx = x.size(1) << 12;
     c1.set_size(4096, x.size(1));
     for (ibmat = 0; ibmat < nx; ibmat++) {
@@ -850,11 +821,6 @@ void d_NCF(const ::coder::array<double, 2U> &y, ::coder::array<double, 1U> &f0)
     }
 }
 
-//
-// Arguments    : const ::coder::array<double, 2U> &y
-//                ::coder::array<double, 1U> &f0
-// Return Type  : void
-//
 void e_NCF(const ::coder::array<double, 2U> &y, ::coder::array<double, 1U> &f0)
 {
     array<creal_T, 2U> x;
@@ -883,7 +849,7 @@ void e_NCF(const ::coder::array<double, 2U> &y, ::coder::array<double, 1U> &f0)
     boolean_T empty_non_axis_sizes;
     edge[0] = 60.0;
     edge[1] = 480.0;
-    f_fft(y, x);
+    e_fft(y, x);
     nx = x.size(1) << 12;
     c1.set_size(4096, x.size(1));
     for (ibmat = 0; ibmat < nx; ibmat++) {
@@ -1058,11 +1024,6 @@ void e_NCF(const ::coder::array<double, 2U> &y, ::coder::array<double, 1U> &f0)
     }
 }
 
-//
-// Arguments    : const ::coder::array<double, 2U> &y
-//                ::coder::array<double, 1U> &f0
-// Return Type  : void
-//
 void f_NCF(const ::coder::array<double, 2U> &y, ::coder::array<double, 1U> &f0)
 {
     array<creal_T, 2U> x;
@@ -1091,7 +1052,7 @@ void f_NCF(const ::coder::array<double, 2U> &y, ::coder::array<double, 1U> &f0)
     boolean_T empty_non_axis_sizes;
     edge[0] = 110.0;
     edge[1] = 882.0;
-    g_fft(y, x);
+    f_fft(y, x);
     nx = x.size(1) << 13;
     c1.set_size(8192, x.size(1));
     for (ibmat = 0; ibmat < nx; ibmat++) {
@@ -1266,11 +1227,6 @@ void f_NCF(const ::coder::array<double, 2U> &y, ::coder::array<double, 1U> &f0)
     }
 }
 
-//
-// Arguments    : const ::coder::array<double, 2U> &y
-//                ::coder::array<double, 1U> &f0
-// Return Type  : void
-//
 void g_NCF(const ::coder::array<double, 2U> &y, ::coder::array<double, 1U> &f0)
 {
     array<creal_T, 2U> x;
@@ -1299,7 +1255,7 @@ void g_NCF(const ::coder::array<double, 2U> &y, ::coder::array<double, 1U> &f0)
     boolean_T empty_non_axis_sizes;
     edge[0] = 120.0;
     edge[1] = 960.0;
-    h_fft(y, x);
+    g_fft(y, x);
     nx = x.size(1) << 13;
     c1.set_size(8192, x.size(1));
     for (ibmat = 0; ibmat < nx; ibmat++) {
@@ -1478,9 +1434,3 @@ void g_NCF(const ::coder::array<double, 2U> &y, ::coder::array<double, 1U> &f0)
 } // namespace internal
 } // namespace audio
 } // namespace coder
-
-//
-// File trailer for NCF.cpp
-//
-// [EOF]
-//

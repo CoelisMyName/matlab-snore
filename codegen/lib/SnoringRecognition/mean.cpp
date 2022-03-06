@@ -1,25 +1,8 @@
-//
-// File: mean.cpp
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
-// Include Files
 #include "mean.h"
-#include "blockedSummation.h"
-#include "combineVectorElements.h"
 #include "rt_nonfinite.h"
 #include "coder_array.h"
 #include <string.h>
 
-// Function Definitions
-//
-// Arguments    : const ::coder::array<double, 2U> &x
-//                double y_data[]
-//                int *y_size
-// Return Type  : void
-//
 namespace coder {
 void mean(const ::coder::array<double, 2U> &x, double y_data[], int *y_size)
 {
@@ -93,84 +76,6 @@ void mean(const ::coder::array<double, 2U> &x, double y_data[], int *y_size)
     }
 }
 
-//
-// Arguments    : const ::coder::array<double, 2U> &x
-//                double y[12]
-// Return Type  : void
-//
-void mean(const ::coder::array<double, 2U> &x, double y[12])
-{
-    int firstBlockLength;
-    if (x.size(0) == 0) {
-        memset(&y[0], 0, 12U * sizeof(double));
-    } else {
-        int lastBlockLength;
-        int nblocks;
-        if (x.size(0) <= 1024) {
-            firstBlockLength = x.size(0);
-            lastBlockLength = 0;
-            nblocks = 1;
-        } else {
-            firstBlockLength = 1024;
-            nblocks = x.size(0) / 1024;
-            lastBlockLength = x.size(0) - (nblocks << 10);
-            if (lastBlockLength > 0) {
-                nblocks++;
-            } else {
-                lastBlockLength = 1024;
-            }
-        }
-        for (int xi = 0; xi < 12; xi++) {
-            int k;
-            int xpageoffset;
-            xpageoffset = xi * x.size(0);
-            y[xi] = x[xpageoffset];
-            for (k = 2; k <= firstBlockLength; k++) {
-                y[xi] += x[(xpageoffset + k) - 1];
-            }
-            for (int ib = 2; ib <= nblocks; ib++) {
-                double bsum;
-                int hi;
-                int xblockoffset;
-                xblockoffset = xpageoffset + ((ib - 1) << 10);
-                bsum = x[xblockoffset];
-                if (ib == nblocks) {
-                    hi = lastBlockLength;
-                } else {
-                    hi = 1024;
-                }
-                for (k = 2; k <= hi; k++) {
-                    bsum += x[(xblockoffset + k) - 1];
-                }
-                y[xi] += bsum;
-            }
-        }
-    }
-    for (firstBlockLength = 0; firstBlockLength < 12; firstBlockLength++) {
-        y[firstBlockLength] /= static_cast<double>(x.size(0));
-    }
-}
-
-//
-// Arguments    : const ::coder::array<double, 2U> &x
-//                ::coder::array<double, 2U> &y
-// Return Type  : void
-//
-void mean(const ::coder::array<double, 2U> &x, ::coder::array<double, 2U> &y)
-{
-    int loop_ub;
-    combineVectorElements(x, y);
-    y.set_size(1, y.size(1));
-    loop_ub = y.size(1) - 1;
-    for (int i = 0; i <= loop_ub; i++) {
-        y[i] = y[i] / static_cast<double>(x.size(0));
-    }
-}
-
-//
-// Arguments    : const ::coder::array<double, 2U> &x
-// Return Type  : double
-//
 double mean(const ::coder::array<double, 2U> &x)
 {
     double y;
@@ -219,19 +124,4 @@ double mean(const ::coder::array<double, 2U> &x)
     return y;
 }
 
-//
-// Arguments    : const ::coder::array<double, 1U> &x
-// Return Type  : double
-//
-double mean(const ::coder::array<double, 1U> &x)
-{
-    return blockedSummation(x, x.size(0)) / static_cast<double>(x.size(0));
-}
-
 } // namespace coder
-
-//
-// File trailer for mean.cpp
-//
-// [EOF]
-//

@@ -1,21 +1,7 @@
-//
-// File: rtGetNaN.cpp
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
 
-// Abstract:
-//       MATLAB for code generation function to initialize non-finite, NaN
-// Include Files
 #include "rtGetNaN.h"
 #include "rt_nonfinite.h"
 
-// Function: rtGetNaN
-// ======================================================================
-//  Abstract:
-// Initialize rtNaN needed by the generated code.
-//  NaN is initialized as non-signaling. Assumes IEEE.
 real_T rtGetNaN(void)
 {
     real_T nan = 0.0;
@@ -52,11 +38,6 @@ real_T rtGetNaN(void)
     return nan;
 }
 
-// Function: rtGetNaNF
-// =====================================================================
-//  Abstract:
-//  Initialize rtNaNF needed by the generated code.
-//  NaN is initialized as non-signaling. Assumes IEEE
 real32_T rtGetNaNF(void)
 {
     IEEESingle nanF = {{0}};
@@ -80,9 +61,3 @@ real32_T rtGetNaNF(void)
 
     return nanF.wordL.wordLreal;
 }
-
-//
-// File trailer for rtGetNaN.cpp
-//
-// [EOF]
-//

@@ -1,31 +1,9 @@
-//
-// File: xdlanv2.cpp
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
-// Include Files
 #include "xdlanv2.h"
 #include "SnoringRecognition_rtwutil.h"
 #include "rt_nonfinite.h"
 #include "rt_nonfinite.h"
 #include <math.h>
 
-// Function Definitions
-//
-// Arguments    : double *a
-//                double *b
-//                double *c
-//                double *d
-//                double *rt1r
-//                double *rt1i
-//                double *rt2r
-//                double *rt2i
-//                double *cs
-//                double *sn
-// Return Type  : void
-//
 namespace coder {
 namespace internal {
 namespace reflapack {
@@ -165,9 +143,3 @@ void xdlanv2(double *a, double *b, double *c, double *d, double *rt1r,
 } // namespace reflapack
 } // namespace internal
 } // namespace coder
-
-//
-// File trailer for xdlanv2.cpp
-//
-// [EOF]
-//

@@ -1,11 +1,3 @@
-//
-// File: computeGammatoneCoefficients.cpp
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
-// Include Files
 #include "computeGammatoneCoefficients.h"
 #include "SnoringRecognition_data.h"
 #include "SnoringRecognition_rtwutil.h"
@@ -13,13 +5,6 @@
 #include "rt_nonfinite.h"
 #include <math.h>
 
-// Function Definitions
-//
-// Arguments    : double fs
-//                const double cf[29]
-//                double coeffs[696]
-// Return Type  : void
-//
 namespace coder {
 namespace audio {
 namespace internal {
@@ -280,12 +265,6 @@ void b_computeGammatoneCoefficients(double fs, const double cf[29],
     }
 }
 
-//
-// Arguments    : double fs
-//                const double cf[35]
-//                double coeffs[840]
-// Return Type  : void
-//
 void c_computeGammatoneCoefficients(double fs, const double cf[35],
                                     double coeffs[840])
 {
@@ -543,12 +522,6 @@ void c_computeGammatoneCoefficients(double fs, const double cf[35],
     }
 }
 
-//
-// Arguments    : double fs
-//                const double cf[26]
-//                double coeffs[624]
-// Return Type  : void
-//
 void computeGammatoneCoefficients(double fs, const double cf[26],
                                   double coeffs[624])
 {
@@ -806,12 +779,6 @@ void computeGammatoneCoefficients(double fs, const double cf[26],
     }
 }
 
-//
-// Arguments    : double fs
-//                const double cf[36]
-//                double coeffs[864]
-// Return Type  : void
-//
 void d_computeGammatoneCoefficients(double fs, const double cf[36],
                                     double coeffs[864])
 {
@@ -1069,12 +1036,6 @@ void d_computeGammatoneCoefficients(double fs, const double cf[36],
     }
 }
 
-//
-// Arguments    : double fs
-//                const double cf[41]
-//                double coeffs[984]
-// Return Type  : void
-//
 void e_computeGammatoneCoefficients(double fs, const double cf[41],
                                     double coeffs[984])
 {
@@ -1332,12 +1293,6 @@ void e_computeGammatoneCoefficients(double fs, const double cf[41],
     }
 }
 
-//
-// Arguments    : double fs
-//                const double cf[42]
-//                double coeffs[1008]
-// Return Type  : void
-//
 void f_computeGammatoneCoefficients(double fs, const double cf[42],
                                     double coeffs[1008])
 {
@@ -1599,9 +1554,3 @@ void f_computeGammatoneCoefficients(double fs, const double cf[42],
 } // namespace internal
 } // namespace audio
 } // namespace coder
-
-//
-// File trailer for computeGammatoneCoefficients.cpp
-//
-// [EOF]
-//

@@ -1,27 +1,18 @@
-//
-// File: CompactClassificationEnsemble.h
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
 #ifndef COMPACTCLASSIFICATIONENSEMBLE_H
 #define COMPACTCLASSIFICATIONENSEMBLE_H
 
-// Include Files
 #include "rtwtypes.h"
 #include "coder_array.h"
 #include <cstddef>
 #include <cstdlib>
 
-// Type Definitions
 namespace coder {
 namespace classreg {
 namespace learning {
 namespace coderutils {
 enum Transform
 {
-    Logit = 0, // Default value
+    Logit = 0,
     Doublelogit,
     Invlogit,
     Ismax,
@@ -55,8 +46,3 @@ class CompactClassificationEnsemble {
 } // namespace coder
 
 #endif
-//
-// File trailer for CompactClassificationEnsemble.h
-//
-// [EOF]
-//

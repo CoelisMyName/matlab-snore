@@ -1,23 +1,8 @@
-//
-// File: xdlapy3.cpp
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
-// Include Files
 #include "xdlapy3.h"
 #include "rt_nonfinite.h"
 #include "rt_nonfinite.h"
 #include <math.h>
 
-// Function Definitions
-//
-// Arguments    : double x1
-//                double x2
-//                double x3
-// Return Type  : double
-//
 namespace coder {
 namespace internal {
 double xdlapy3(double x1, double x2, double x3)
@@ -50,9 +35,3 @@ double xdlapy3(double x1, double x2, double x3)
 
 } // namespace internal
 } // namespace coder
-
-//
-// File trailer for xdlapy3.cpp
-//
-// [EOF]
-//

@@ -1,21 +1,7 @@
-//
-// File: audioDelta.cpp
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
-// Include Files
 #include "audioDelta.h"
 #include "rt_nonfinite.h"
 #include "coder_array.h"
 
-// Function Definitions
-//
-// Arguments    : const ::coder::array<double, 2U> &x
-//                ::coder::array<double, 2U> &delta
-// Return Type  : void
-//
 namespace coder {
 void audioDelta(const ::coder::array<double, 2U> &x,
                 ::coder::array<double, 2U> &delta)
@@ -127,9 +113,3 @@ void audioDelta(const ::coder::array<double, 2U> &x,
 }
 
 } // namespace coder
-
-//
-// File trailer for audioDelta.cpp
-//
-// [EOF]
-//

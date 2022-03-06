@@ -1,11 +1,3 @@
-//
-// File: introsort.cpp
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
-// Include Files
 #include "introsort.h"
 #include "anonymous_function.h"
 #include "heapsort.h"
@@ -15,13 +7,6 @@
 #include "coder_array.h"
 #include "coder_bounded_array.h"
 
-// Function Definitions
-//
-// Arguments    : ::coder::array<int, 1U> &x
-//                int xend
-//                const anonymous_function *cmp
-// Return Type  : void
-//
 namespace coder {
 namespace internal {
 void introsort(::coder::array<int, 1U> &x, int xend,
@@ -188,9 +173,3 @@ void introsort(::coder::array<int, 1U> &x, int xend,
 
 } // namespace internal
 } // namespace coder
-
-//
-// File trailer for introsort.cpp
-//
-// [EOF]
-//

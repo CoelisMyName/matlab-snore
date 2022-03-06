@@ -1,11 +1,3 @@
-//
-// File: xhseqr.cpp
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
-// Include Files
 #include "xhseqr.h"
 #include "rt_nonfinite.h"
 #include "xdlanv2.h"
@@ -14,11 +6,6 @@
 #include <math.h>
 #include <string.h>
 
-// Function Definitions
-//
-// Arguments    : double h[36]
-// Return Type  : int
-//
 namespace coder {
 namespace internal {
 namespace lapack {
@@ -336,9 +323,3 @@ int xhseqr(double h[36])
 } // namespace lapack
 } // namespace internal
 } // namespace coder
-
-//
-// File trailer for xhseqr.cpp
-//
-// [EOF]
-//

@@ -1,11 +1,3 @@
-//
-// File: gammatoneFilterBank.cpp
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
-// Include Files
 #include "gammatoneFilterBank.h"
 #include "computeGammatoneCoefficients.h"
 #include "filter.h"
@@ -13,11 +5,6 @@
 #include "coder_array.h"
 #include <string.h>
 
-// Function Definitions
-//
-// Arguments    : void
-// Return Type  : void
-//
 namespace coder {
 void gammatoneFilterBank::matlabCodegenDestructor()
 {
@@ -32,10 +19,6 @@ void gammatoneFilterBank::matlabCodegenDestructor()
     }
 }
 
-//
-// Arguments    : void
-// Return Type  : void
-//
 void b_gammatoneFilterBank::matlabCodegenDestructor()
 {
     if (!this->matlabCodegenIsDeleted) {
@@ -49,10 +32,6 @@ void b_gammatoneFilterBank::matlabCodegenDestructor()
     }
 }
 
-//
-// Arguments    : void
-// Return Type  : void
-//
 void c_gammatoneFilterBank::matlabCodegenDestructor()
 {
     if (!this->matlabCodegenIsDeleted) {
@@ -66,10 +45,6 @@ void c_gammatoneFilterBank::matlabCodegenDestructor()
     }
 }
 
-//
-// Arguments    : void
-// Return Type  : void
-//
 void d_gammatoneFilterBank::matlabCodegenDestructor()
 {
     if (!this->matlabCodegenIsDeleted) {
@@ -83,10 +58,6 @@ void d_gammatoneFilterBank::matlabCodegenDestructor()
     }
 }
 
-//
-// Arguments    : void
-// Return Type  : void
-//
 void e_gammatoneFilterBank::matlabCodegenDestructor()
 {
     if (!this->matlabCodegenIsDeleted) {
@@ -100,10 +71,6 @@ void e_gammatoneFilterBank::matlabCodegenDestructor()
     }
 }
 
-//
-// Arguments    : void
-// Return Type  : void
-//
 void f_gammatoneFilterBank::matlabCodegenDestructor()
 {
     if (!this->matlabCodegenIsDeleted) {
@@ -117,11 +84,6 @@ void f_gammatoneFilterBank::matlabCodegenDestructor()
     }
 }
 
-//
-// Arguments    : const ::coder::array<double, 1U> &varargin_1
-//                ::coder::array<double, 2U> &varargout_1
-// Return Type  : void
-//
 void b_gammatoneFilterBank::SystemCore_step(
     const ::coder::array<double, 1U> &varargin_1,
     ::coder::array<double, 2U> &varargout_1)
@@ -245,118 +207,66 @@ void b_gammatoneFilterBank::SystemCore_step(
     }
 }
 
-//
-// Arguments    : void
-// Return Type  : gammatoneFilterBank
-//
 gammatoneFilterBank::gammatoneFilterBank()
 {
     this->matlabCodegenIsDeleted = true;
 }
 
-//
-// Arguments    : void
-// Return Type  : b_gammatoneFilterBank
-//
 b_gammatoneFilterBank::b_gammatoneFilterBank()
 {
     this->matlabCodegenIsDeleted = true;
 }
 
-//
-// Arguments    : void
-// Return Type  : c_gammatoneFilterBank
-//
 c_gammatoneFilterBank::c_gammatoneFilterBank()
 {
     this->matlabCodegenIsDeleted = true;
 }
 
-//
-// Arguments    : void
-// Return Type  : d_gammatoneFilterBank
-//
 d_gammatoneFilterBank::d_gammatoneFilterBank()
 {
     this->matlabCodegenIsDeleted = true;
 }
 
-//
-// Arguments    : void
-// Return Type  : e_gammatoneFilterBank
-//
 e_gammatoneFilterBank::e_gammatoneFilterBank()
 {
     this->matlabCodegenIsDeleted = true;
 }
 
-//
-// Arguments    : void
-// Return Type  : f_gammatoneFilterBank
-//
 f_gammatoneFilterBank::f_gammatoneFilterBank()
 {
     this->matlabCodegenIsDeleted = true;
 }
 
-//
-// Arguments    : void
-// Return Type  : void
-//
 gammatoneFilterBank::~gammatoneFilterBank()
 {
     this->matlabCodegenDestructor();
 }
 
-//
-// Arguments    : void
-// Return Type  : void
-//
 b_gammatoneFilterBank::~b_gammatoneFilterBank()
 {
     this->matlabCodegenDestructor();
 }
 
-//
-// Arguments    : void
-// Return Type  : void
-//
 c_gammatoneFilterBank::~c_gammatoneFilterBank()
 {
     this->matlabCodegenDestructor();
 }
 
-//
-// Arguments    : void
-// Return Type  : void
-//
 d_gammatoneFilterBank::~d_gammatoneFilterBank()
 {
     this->matlabCodegenDestructor();
 }
 
-//
-// Arguments    : void
-// Return Type  : void
-//
 e_gammatoneFilterBank::~e_gammatoneFilterBank()
 {
     this->matlabCodegenDestructor();
 }
 
-//
-// Arguments    : void
-// Return Type  : void
-//
 f_gammatoneFilterBank::~f_gammatoneFilterBank()
 {
     this->matlabCodegenDestructor();
 }
 
-//
-// Arguments    : void
-// Return Type  : void
-//
 void b_gammatoneFilterBank::handle_matlabCodegenDestructor()
 {
     if (!this->matlabCodegenIsDeleted) {
@@ -370,11 +280,6 @@ void b_gammatoneFilterBank::handle_matlabCodegenDestructor()
     }
 }
 
-//
-// Arguments    : const ::coder::array<double, 1U> &varargin_1
-//                ::coder::array<double, 2U> &varargout_1
-// Return Type  : void
-//
 void gammatoneFilterBank::step(const ::coder::array<double, 1U> &varargin_1,
                                ::coder::array<double, 2U> &varargout_1)
 {
@@ -499,11 +404,6 @@ void gammatoneFilterBank::step(const ::coder::array<double, 1U> &varargin_1,
     }
 }
 
-//
-// Arguments    : const ::coder::array<double, 1U> &varargin_1
-//                ::coder::array<double, 2U> &varargout_1
-// Return Type  : void
-//
 void b_gammatoneFilterBank::step(const ::coder::array<double, 1U> &varargin_1,
                                  ::coder::array<double, 2U> &varargout_1)
 {
@@ -644,11 +544,6 @@ void b_gammatoneFilterBank::step(const ::coder::array<double, 1U> &varargin_1,
     }
 }
 
-//
-// Arguments    : const ::coder::array<double, 1U> &varargin_1
-//                ::coder::array<double, 2U> &varargout_1
-// Return Type  : void
-//
 void f_gammatoneFilterBank::step(const ::coder::array<double, 1U> &varargin_1,
                                  ::coder::array<double, 2U> &varargout_1)
 {
@@ -775,11 +670,6 @@ void f_gammatoneFilterBank::step(const ::coder::array<double, 1U> &varargin_1,
     }
 }
 
-//
-// Arguments    : const ::coder::array<double, 1U> &varargin_1
-//                ::coder::array<double, 2U> &varargout_1
-// Return Type  : void
-//
 void e_gammatoneFilterBank::step(const ::coder::array<double, 1U> &varargin_1,
                                  ::coder::array<double, 2U> &varargout_1)
 {
@@ -932,11 +822,6 @@ void e_gammatoneFilterBank::step(const ::coder::array<double, 1U> &varargin_1,
     }
 }
 
-//
-// Arguments    : const ::coder::array<double, 1U> &varargin_1
-//                ::coder::array<double, 2U> &varargout_1
-// Return Type  : void
-//
 void d_gammatoneFilterBank::step(const ::coder::array<double, 1U> &varargin_1,
                                  ::coder::array<double, 2U> &varargout_1)
 {
@@ -1061,11 +946,6 @@ void d_gammatoneFilterBank::step(const ::coder::array<double, 1U> &varargin_1,
     }
 }
 
-//
-// Arguments    : const ::coder::array<double, 1U> &varargin_1
-//                ::coder::array<double, 2U> &varargout_1
-// Return Type  : void
-//
 void c_gammatoneFilterBank::step(const ::coder::array<double, 1U> &varargin_1,
                                  ::coder::array<double, 2U> &varargout_1)
 {
@@ -1213,9 +1093,3 @@ void c_gammatoneFilterBank::step(const ::coder::array<double, 1U> &varargin_1,
 }
 
 } // namespace coder
-
-//
-// File trailer for gammatoneFilterBank.cpp
-//
-// [EOF]
-//

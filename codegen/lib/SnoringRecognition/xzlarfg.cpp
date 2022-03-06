@@ -1,24 +1,9 @@
-//
-// File: xzlarfg.cpp
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
-// Include Files
 #include "xzlarfg.h"
 #include "SnoringRecognition_rtwutil.h"
 #include "rt_nonfinite.h"
 #include "xnrm2.h"
 #include <math.h>
 
-// Function Definitions
-//
-// Arguments    : int n
-//                double *alpha1
-//                double x[3]
-// Return Type  : double
-//
 namespace coder {
 namespace internal {
 namespace reflapack {
@@ -76,9 +61,3 @@ double xzlarfg(int n, double *alpha1, double x[3])
 } // namespace reflapack
 } // namespace internal
 } // namespace coder
-
-//
-// File trailer for xzlarfg.cpp
-//
-// [EOF]
-//

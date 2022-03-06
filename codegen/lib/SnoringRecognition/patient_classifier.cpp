@@ -1,46 +1,9 @@
-//
-// File: patient_classifier.cpp
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
-// Include Files
 #include "patient_classifier.h"
 #include "GMM_score.h"
 #include "SnoringRecognition_types.h"
 #include "rt_nonfinite.h"
 #include "coder_array.h"
 
-// Function Definitions
-//
-// function label_OSA = patient_classifier(MFCC_feature, BARKEE, period_mean,
-// period_max, period_min, period_var,...
-//     cep, Formant1, Formant2, Formant3, GTCCmean, PR800mean, PR800max,
-//     PR800min, PR800var,... SE_mean, SE_max, SE_min, SE_var)
-//
-// Arguments    : SnoringRecognitionStackData *SD
-//                const coder::array<double, 2U> &MFCC_feature
-//                const coder::array<double, 2U> &BARKEE
-//                const coder::array<double, 1U> &period_mean
-//                const coder::array<double, 1U> &period_max
-//                const coder::array<double, 1U> &period_min
-//                const coder::array<double, 1U> &period_var
-//                const coder::array<double, 2U> &cep
-//                const coder::array<double, 1U> &Formant1
-//                const coder::array<double, 1U> &Formant2
-//                const coder::array<double, 1U> &Formant3
-//                const coder::array<double, 2U> &GTCCmean
-//                const coder::array<double, 1U> &PR800mean
-//                const coder::array<double, 1U> &PR800max
-//                const coder::array<double, 1U> &PR800min
-//                const coder::array<double, 1U> &PR800var
-//                const coder::array<double, 1U> &SE_mean
-//                const coder::array<double, 1U> &SE_max
-//                const coder::array<double, 1U> &SE_min
-//                const coder::array<double, 1U> &SE_var
-// Return Type  : double
-//
 double patient_classifier(SnoringRecognitionStackData *SD,
                           const coder::array<double, 2U> &MFCC_feature,
                           const coder::array<double, 2U> &BARKEE,
@@ -101,11 +64,6 @@ double patient_classifier(SnoringRecognitionStackData *SD,
     signed char r_input_sizes_idx_1;
     signed char sizes_idx_1;
     boolean_T empty_non_axis_sizes;
-    // 'patient_classifier:5' feature = [MFCC_feature, BARKEE, period_mean,
-    // period_max, period_min, period_var,... 'patient_classifier:6' cep,
-    // Formant1, Formant2, Formant3, GTCCmean, PR800mean, PR800max, PR800min,
-    // PR800var,... 'patient_classifier:7'         SE_mean, SE_max, SE_min,
-    // SE_var];
     if (MFCC_feature.size(0) != 0) {
         result = MFCC_feature.size(0);
     } else if (BARKEE.size(0) != 0) {
@@ -541,8 +499,6 @@ double patient_classifier(SnoringRecognitionStackData *SD,
                                        r_input_sizes_idx_1)] = SE_var[i1];
         }
     }
-    // 'patient_classifier:9' indexModel = coder.load('index.mat');
-    // 'patient_classifier:11' feature_1 = feature(:, indexModel.index);
     result_idx_1_tmp = feature.size(0);
     feature_1.set_size(feature.size(0), 130);
     for (i = 0; i < 130; i++) {
@@ -551,16 +507,5 @@ double patient_classifier(SnoringRecognitionStackData *SD,
                 feature[i1 + feature.size(0) * (uv[i] - 1)];
         }
     }
-    // 'patient_classifier:13' threshold = -15;
-    //  阈值 由实验得出
-    // 'patient_classifier:14' model = coder.load('GMMmodel.mat');
-    // 'patient_classifier:15' [label_OSA] = GMM_score(feature_1,
-    // model.speakerGmm, threshold);
     return GMM_score(SD, feature_1);
 }
-
-//
-// File trailer for patient_classifier.cpp
-//
-// [EOF]
-//

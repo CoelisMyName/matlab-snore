@@ -1,11 +1,3 @@
-//
-// File: callLevinson.cpp
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
-// Include Files
 #include "callLevinson.h"
 #include "SnoringRecognition_data.h"
 #include "rt_nonfinite.h"
@@ -13,18 +5,6 @@
 #include <math.h>
 #include <string.h>
 
-// Function Definitions
-//
-// Arguments    : const ::coder::array<creal_T, 1U> &R
-//                double N
-//                creal_T A_data[]
-//                int A_size[2]
-//                double E_data[]
-//                int E_size[2]
-//                creal_T K_data[]
-//                int K_size[2]
-// Return Type  : void
-//
 namespace coder {
 namespace signal {
 namespace internal {
@@ -213,9 +193,3 @@ void callLevinson(const ::coder::array<creal_T, 1U> &R, double N,
 } // namespace internal
 } // namespace signal
 } // namespace coder
-
-//
-// File trailer for callLevinson.cpp
-//
-// [EOF]
-//

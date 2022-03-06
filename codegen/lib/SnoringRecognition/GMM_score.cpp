@@ -1,27 +1,14 @@
-//
-// File: GMM_score.cpp
-//
-// MATLAB Coder version            : 5.2
-// C/C++ source code generated on  : 27-Feb-2022 11:31:05
-//
-
-// Include Files
 #include "GMM_score.h"
 #include "SnoringRecognition_types.h"
-#include "lmultigauss.h"
-#include "mean.h"
+#include "blockedSummation.h"
+#include "permute.h"
+#include "repmat.h"
 #include "rt_nonfinite.h"
+#include "sort.h"
 #include "coder_array.h"
+#include <math.h>
 #include <string.h>
 
-// Function Definitions
-//
-// function [label] = GMM_score(data_test, speakerGmm, threshold)
-//
-// Arguments    : SnoringRecognitionStackData *SD
-//                const coder::array<double, 2U> &data_test
-// Return Type  : double
-//
 double GMM_score(SnoringRecognitionStackData *SD, const coder::array<double, 2U>
                  &data_test)
 {
@@ -5593,17 +5580,28 @@ double GMM_score(SnoringRecognitionStackData *SD, const coder::array<double, 2U>
         0.029750567338593496, 0.11289531682465875, 0.010850086699711979,
         0.023907712863433961, 0.029638383606158794, 0.02120969222485081 };
 
-    coder::array<double, 2U> a__1;
-    coder::array<double, 2U> b_data_test;
+    static const signed char b_iv[3] = { 1, 3, 2 };
+
+    coder::array<double, 3U> b;
+    coder::array<double, 3U> c_b;
+    coder::array<double, 3U> r;
+    coder::array<double, 3U> z;
+    coder::array<double, 2U> X;
+    coder::array<double, 2U> a;
+    coder::array<double, 2U> c;
+    coder::array<double, 2U> c_x;
+    coder::array<double, 2U> d_b;
+    coder::array<double, 2U> x;
+    coder::array<double, 2U> y;
     coder::array<double, 1U> lY;
     b_struct_T s[2];
+    double sigma_t[4160];
+    double b_x[32];
+    double b_dv6[3];
     double maxv[2];
-    double label;
     int loop_ub;
-
-    // 'GMM_score:2' n_class = 2;
-    // 'GMM_score:4' maxv = zeros(1,n_class);
-    // 'GMM_score:6' for i = 1:n_class
+    int subsa_idx_1;
+    int subsa_idx_2;
     loop_ub = data_test.size(0);
     memcpy(&SD->f4.s[0].mu[0], &b_dv[0], 4160U * sizeof(double));
     memcpy(&SD->f4.s[0].sigm[0], &b_dv1[0], 4160U * sizeof(double));
@@ -5617,49 +5615,223 @@ double GMM_score(SnoringRecognitionStackData *SD, const coder::array<double, 2U>
     memcpy(&SD->f4.b_s[1].mu[0], &b_dv3[0], 4160U * sizeof(double));
     memcpy(&SD->f4.b_s[1].sigm[0], &b_dv4[0], 4160U * sizeof(double));
     memcpy(&SD->f4.b_s[1].c[0], &b_dv5[0], 32U * sizeof(double));
-    memcpy(&s[0].mu[0], &b_dv[0], 4160U * sizeof(double));
-    memcpy(&s[0].sigm[0], &b_dv1[0], 4160U * sizeof(double));
     memcpy(&s[0].c[0], &b_dv2[0], 32U * sizeof(double));
     memcpy(&s[1].mu[0], &b_dv3[0], 4160U * sizeof(double));
     memcpy(&s[1].sigm[0], &b_dv4[0], 4160U * sizeof(double));
     memcpy(&s[1].c[0], &b_dv5[0], 32U * sizeof(double));
     for (int i = 0; i < 2; i++) {
-        // 'GMM_score:7' mu_t = speakerGmm(i).mu;
-        // 'GMM_score:8' sigma_t = speakerGmm(i).sigm;
-        // 'GMM_score:9' c_t = speakerGmm(i).c;
-        // 'GMM_score:10' [~, lY] = lmultigauss(data_test', mu_t, sigma_t, c_t);
-        b_data_test.set_size(130, data_test.size(0));
-        for (int b_i = 0; b_i < loop_ub; b_i++) {
-            for (int i1 = 0; i1 < 130; i1++) {
-                b_data_test[i1 + 130 * b_i] = data_test[b_i + data_test.size(0) *
-                    i1];
+        double b_c;
+        int ibmat;
+        int ibtile;
+        int jcol;
+        int jtilecol;
+        int k;
+        int nrows;
+        int xi;
+        boolean_T b_b;
+        memcpy(&sigma_t[0], &SD->f4.b_s[i].sigm[0], 4160U * sizeof(double));
+        memcpy(&s[0].mu[0], &b_dv[0], 4160U * sizeof(double));
+        memcpy(&s[0].sigm[0], &b_dv1[0], 4160U * sizeof(double));
+        x.set_size(130, data_test.size(0));
+        for (xi = 0; xi < loop_ub; xi++) {
+            for (ibtile = 0; ibtile < 130; ibtile++) {
+                x[ibtile + 130 * xi] = data_test[xi + data_test.size(0) * ibtile];
             }
         }
 
-        lmultigauss(b_data_test, SD->f4.s[i].mu, SD->f4.b_s[i].sigm, s[i].c,
-                    a__1, lY);
+        a.set_size(x.size(1), 130);
+        nrows = x.size(1);
+        for (xi = 0; xi < 130; xi++) {
+            for (ibtile = 0; ibtile < nrows; ibtile++) {
+                a[ibtile + a.size(0) * xi] = x[xi + 130 * ibtile];
+            }
+        }
 
-        // 'GMM_score:11' maxv(i) = mean(lY);
-        maxv[i] = coder::mean(lY);
+        b.set_size(a.size(0), 130, 32);
+        nrows = a.size(0);
+        for (jtilecol = 0; jtilecol < 32; jtilecol++) {
+            ibtile = jtilecol * (nrows * 130) - 1;
+            for (jcol = 0; jcol < 130; jcol++) {
+                xi = jcol * nrows;
+                ibmat = ibtile + xi;
+                for (k = 0; k < nrows; k++) {
+                    b[(ibmat + k) + 1] = a[xi + k];
+                }
+            }
+        }
+
+        b_b = true;
+        if (b.size(0) != 0) {
+            boolean_T exitg1;
+            nrows = 0;
+            k = 0;
+            exitg1 = false;
+            while ((!exitg1) && (k < 3)) {
+                if (b.size(b_iv[k] - 1) != 1) {
+                    if (nrows > b_iv[k]) {
+                        b_b = false;
+                        exitg1 = true;
+                    } else {
+                        nrows = b_iv[k];
+                        k++;
+                    }
+                } else {
+                    k++;
+                }
+            }
+        }
+
+        if (b_b) {
+            c_b.set_size(b.size(0), 32, 130);
+            nrows = (b.size(0) << 5) * 130;
+            for (xi = 0; xi < nrows; xi++) {
+                c_b[xi] = b[xi];
+            }
+        } else {
+            c_b.set_size(b.size(0), 32, 130);
+            xi = b.size(0);
+            for (k = 0; k < 32; k++) {
+                for (nrows = 0; nrows < 130; nrows++) {
+                    if (0 <= xi - 1) {
+                        subsa_idx_1 = nrows + 1;
+                        subsa_idx_2 = k + 1;
+                    }
+
+                    for (ibtile = 0; ibtile < xi; ibtile++) {
+                        c_b[(ibtile + c_b.size(0) * (subsa_idx_2 - 1)) +
+                            c_b.size(0) * 32 * (subsa_idx_1 - 1)] = b[(ibtile +
+                            b.size(0) * (subsa_idx_1 - 1)) + b.size(0) * 130 *
+                            (subsa_idx_2 - 1)];
+                    }
+                }
+            }
+        }
+
+        b_dv6[0] = 1.0;
+        b_dv6[1] = 1.0;
+        b_dv6[2] = x.size(1);
+        coder::repmat(SD->f4.s[i].mu, b_dv6, r);
+        coder::permute(r, z);
+        nrows = c_b.size(0) * 32 * 130;
+        c_b.set_size(c_b.size(0), 32, 130);
+        for (xi = 0; xi < nrows; xi++) {
+            c_b[xi] = c_b[xi] - z[xi];
+        }
+
+        b_dv6[0] = 1.0;
+        b_dv6[1] = 1.0;
+        b_dv6[2] = x.size(1);
+        coder::repmat(SD->f4.b_s[i].sigm, b_dv6, r);
+        coder::permute(r, z);
+        nrows = c_b.size(0) * 32 * 130;
+        z.set_size(c_b.size(0), 32, 130);
+        for (xi = 0; xi < nrows; xi++) {
+            z[xi] = c_b[xi] / z[xi];
+        }
+
+        c.set_size(c_b.size(0), 32);
+        nrows = c_b.size(0) * 32;
+        ibtile = -1;
+        for (jtilecol = 0; jtilecol < nrows; jtilecol++) {
+            ibtile++;
+            b_c = 0.0;
+            for (k = 0; k < 130; k++) {
+                xi = ibtile + k * nrows;
+                b_c += c_b[xi] * z[xi];
+            }
+
+            c[jtilecol] = b_c;
+        }
+
+        for (k = 0; k < 4160; k++) {
+            sigma_t[k] = log(sigma_t[k]);
+        }
+
+        d_b.set_size(x.size(1), 32);
+        nrows = x.size(1);
+        for (xi = 0; xi < 32; xi++) {
+            ibtile = xi * 130;
+            b_c = sigma_t[ibtile];
+            for (k = 0; k < 129; k++) {
+                b_c += sigma_t[(ibtile + k) + 1];
+            }
+
+            b_x[xi] = log(s[i].c[xi]) - (0.5 * b_c + 119.46200931660745);
+            ibmat = xi * nrows;
+            for (jtilecol = 0; jtilecol < nrows; jtilecol++) {
+                d_b[ibmat + jtilecol] = b_x[xi];
+            }
+        }
+
+        X.set_size(32, d_b.size(0));
+        nrows = d_b.size(0);
+        for (xi = 0; xi < nrows; xi++) {
+            for (ibtile = 0; ibtile < 32; ibtile++) {
+                X[ibtile + 32 * xi] = d_b[xi + d_b.size(0) * ibtile] + -0.5 *
+                    c[xi + c.size(0) * ibtile];
+            }
+        }
+
+        coder::internal::sort(X);
+        c_x.set_size(31, X.size(1));
+        xi = X.size(1) - 1;
+        for (jcol = 0; jcol <= xi; jcol++) {
+            ibmat = jcol * 31;
+            for (jtilecol = 0; jtilecol < 31; jtilecol++) {
+                c_x[ibmat + jtilecol] = X[32 * jcol + 31];
+            }
+        }
+
+        nrows = X.size(1);
+        c_x.set_size(31, X.size(1));
+        for (xi = 0; xi < nrows; xi++) {
+            for (ibtile = 0; ibtile < 31; ibtile++) {
+                c_x[ibtile + 31 * xi] = X[ibtile + 32 * xi] - c_x[ibtile + 31 *
+                    xi];
+            }
+        }
+
+        nrows = 31 * c_x.size(1);
+        for (k = 0; k < nrows; k++) {
+            c_x[k] = exp(c_x[k]);
+        }
+
+        if (c_x.size(1) == 0) {
+            y.set_size(y.size(0), 0);
+        } else {
+            nrows = c_x.size(1);
+            y.set_size(1, c_x.size(1));
+            for (xi = 0; xi < nrows; xi++) {
+                ibtile = xi * 31;
+                b_c = c_x[ibtile];
+                for (k = 0; k < 30; k++) {
+                    b_c += c_x[(ibtile + k) + 1];
+                }
+
+                y[xi] = b_c;
+            }
+        }
+
+        y.set_size(1, y.size(1));
+        nrows = y.size(1) - 1;
+        for (xi = 0; xi <= nrows; xi++) {
+            y[xi] = y[xi] + 1.0;
+        }
+
+        nrows = y.size(1);
+        for (k = 0; k < nrows; k++) {
+            y[k] = log(y[k]);
+        }
+
+        nrows = X.size(1);
+        lY.set_size(X.size(1));
+        for (xi = 0; xi < nrows; xi++) {
+            lY[xi] = y[xi] + X[32 * xi + 31];
+        }
+
+        maxv[i] = coder::blockedSummation(lY, lY.size(0)) / static_cast<double>
+            (lY.size(0));
     }
 
-    // 'GMM_score:14' match = maxv;
-    // 'GMM_score:16' if match(1) - match(2) < threshold
-    if (maxv[0] - maxv[1] < -15.0) {
-        // 设置阈值
-        // 'GMM_score:17' label = 1;
-        label = 1.0;
-    } else {
-        // 'GMM_score:18' else
-        // 'GMM_score:19' label = 0;
-        label = 0.0;
-    }
-
-    return label;
+    return maxv[0] - maxv[1] < -15.0;
 }
-
-//
-// File trailer for GMM_score.cpp
-//
-// [EOF]
-//
