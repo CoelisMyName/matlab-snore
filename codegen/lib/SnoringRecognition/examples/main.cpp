@@ -44,6 +44,7 @@
 #include "vad.h"
 #include "zweight.h"
 #include "coder_array.h"
+#include "mylock.h"
 
 static SnoringRecognitionStackData SnoringRecognitionStackDataGlobal;
 

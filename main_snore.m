@@ -1,5 +1,5 @@
 % 读取音频数据
-[x, fs] = audioread('0001.wav');
+[x, fs] = audioread('1min.wav');
 % [x, fs] = audioread('20131025刘俊光1min降噪.wav');
 xn = x;
 n_start = 0;
